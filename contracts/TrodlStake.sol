@@ -1247,6 +1247,14 @@ contract TrodlStake is ReentrancyGuard, AccessControl {
     }
 
     function getTotalTROStaked() public view returns (uint256) {
+        uint256 total;
+        for (uint256 i = 0; i < _stakers.length; i++) {
+            total = total.add(_userRewards[_stakers[i]].stakedAmount);
+        }
+        return total;
+    }
+
+    function getPoolBalance() public view returns (uint256) {
         return _troStakingPool.balance();
     }
 

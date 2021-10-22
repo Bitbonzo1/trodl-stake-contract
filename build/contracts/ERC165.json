@@ -21,7 +21,7 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Implementation of the {IERC165} interface. Contracts that want to implement ERC165 should inherit from this contract and override {supportsInterface} to check for the additional interface id that will be supported. For example: ```solidity function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {     return interfaceId == type(MyInterface).interfaceId || super.supportsInterface(interfaceId); } ``` Alternatively, {ERC165Storage} provides an easier to use but more expensive implementation.\",\"kind\":\"dev\",\"methods\":{\"supportsInterface(bytes4)\":{\"details\":\"See {IERC165-supportsInterface}.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/TrodlStake.sol\":\"ERC165\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/TrodlStake.sol\":{\"keccak256\":\"0xae16083487bd44f146de0e341c448ce5265aa5aff929c4d6e83297d13dd4f475\",\"license\":\"GPL-3.0-only\",\"urls\":[\"bzz-raw://32622a72e19ecd1f40b79ffd2f23ec2d48f788d39efecac44c22d7850709f504\",\"dweb:/ipfs/QmSoLQAiMhRuWDAHTWmctzwH18iPi54jjyYmhrVGZxNHbW\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Implementation of the {IERC165} interface. Contracts that want to implement ERC165 should inherit from this contract and override {supportsInterface} to check for the additional interface id that will be supported. For example: ```solidity function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {     return interfaceId == type(MyInterface).interfaceId || super.supportsInterface(interfaceId); } ``` Alternatively, {ERC165Storage} provides an easier to use but more expensive implementation.\",\"kind\":\"dev\",\"methods\":{\"supportsInterface(bytes4)\":{\"details\":\"See {IERC165-supportsInterface}.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/TrodlStake.sol\":\"ERC165\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/TrodlStake.sol\":{\"keccak256\":\"0xc4f3eeb7caee5eff2e2dc36216480572e1ce9da1fa514495c92200705d5acc5a\",\"license\":\"GPL-3.0-only\",\"urls\":[\"bzz-raw://335116a574ff1b553a09841e207471a4dc5ec56aadd24322cfce405bdc0a46bf\",\"dweb:/ipfs/QmWmeyQFDBFrrLKm3ZhCmRwB1RM6H8okvrUq1ogLdmoc6r\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -29,7 +29,7 @@
   "deployedGeneratedSources": [],
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "// SPDX-License-Identifier: GPL-3.0-only\r\npragma solidity 0.8.9;\r\n\r\n/**\r\n * @dev Interface of the ERC165 standard, as defined in the\r\n * https://eips.ethereum.org/EIPS/eip-165[EIP].\r\n *\r\n * Implementers can declare support of contract interfaces, which can then be\r\n * queried by others ({ERC165Checker}).\r\n *\r\n * For an implementation, see {ERC165}.\r\n */\r\ninterface IERC165 {\r\n    /**\r\n     * @dev Returns true if this contract implements the interface defined by\r\n     * `interfaceId`. See the corresponding\r\n     * https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section]\r\n     * to learn more about how these ids are created.\r\n     *\r\n     * This function call must use less than 30 000 gas.\r\n     */\r\n    function supportsInterface(bytes4 interfaceId) external view returns (bool);\r\n}\r\n\r\n/**\r\n * @dev Interface of the ERC20 standard as defined in the EIP.\r\n */\r\ninterface IERC20 {\r\n    /**\r\n     * @dev Returns the amount of tokens in existence.\r\n     */\r\n    function totalSupply() external view returns (uint256);\r\n\r\n    /**\r\n     * @dev Returns the amount of tokens owned by `account`.\r\n     */\r\n    function balanceOf(address account) external view returns (uint256);\r\n\r\n    /**\r\n     * @dev Moves `amount` tokens from the caller's account to `recipient`.\r\n     *\r\n     * Returns a boolean value indicating whether the operation succeeded.\r\n     *\r\n     * Emits a {Transfer} event.\r\n     */\r\n    function transfer(address recipient, uint256 amount)\r\n        external\r\n        returns (bool);\r\n\r\n    /**\r\n     * @dev Returns the remaining number of tokens that `spender` will be\r\n     * allowed to spend on behalf of `owner` through {transferFrom}. This is\r\n     * zero by default.\r\n     *\r\n     * This value changes when {approve} or {transferFrom} are called.\r\n     */\r\n    function allowance(address owner, address spender)\r\n        external\r\n        view\r\n        returns (uint256);\r\n\r\n    /**\r\n     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.\r\n     *\r\n     * Returns a boolean value indicating whether the operation succeeded.\r\n     *\r\n     * IMPORTANT: Beware that changing an allowance with this method brings the risk\r\n     * that someone may use both the old and the new allowance by unfortunate\r\n     * transaction ordering. One possible solution to mitigate this race\r\n     * condition is to first reduce the spender's allowance to 0 and set the\r\n     * desired value afterwards:\r\n     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729\r\n     *\r\n     * Emits an {Approval} event.\r\n     */\r\n    function approve(address spender, uint256 amount) external returns (bool);\r\n\r\n    /**\r\n     * @dev Moves `amount` tokens from `sender` to `recipient` using the\r\n     * allowance mechanism. `amount` is then deducted from the caller's\r\n     * allowance.\r\n     *\r\n     * Returns a boolean value indicating whether the operation succeeded.\r\n     *\r\n     * Emits a {Transfer} event.\r\n     */\r\n    function transferFrom(\r\n        address sender,\r\n        address recipient,\r\n        uint256 amount\r\n    ) external returns (bool);\r\n\r\n    /**\r\n     * @dev Emitted when `value` tokens are moved from one account (`from`) to\r\n     * another (`to`).\r\n     *\r\n     * Note that `value` may be zero.\r\n     */\r\n    event Transfer(address indexed from, address indexed to, uint256 value);\r\n\r\n    /**\r\n     * @dev Emitted when the allowance of a `spender` for an `owner` is set by\r\n     * a call to {approve}. `value` is the new allowance.\r\n     */\r\n    event Approval(\r\n        address indexed owner,\r\n        address indexed spender,\r\n        uint256 value\r\n    );\r\n}\r\n\r\n/**\r\n * @dev Provides information about the current execution context, including the\r\n * sender of the transaction and its data. While these are generally available\r\n * via msg.sender and msg.data, they should not be accessed in such a direct\r\n * manner, since when dealing with meta-transactions the account sending and\r\n * paying for execution may not be the actual sender (as far as an application\r\n * is concerned).\r\n *\r\n * This contract is only required for intermediate, library-like contracts.\r\n */\r\nabstract contract Context {\r\n    function _msgSender() internal view virtual returns (address) {\r\n        return msg.sender;\r\n    }\r\n\r\n    function _msgData() internal view virtual returns (bytes calldata) {\r\n        return msg.data;\r\n    }\r\n}\r\n\r\n/**\r\n * @dev Contract module which provides a basic access control mechanism, where\r\n * there is an account (an owner) that can be granted exclusive access to\r\n * specific functions.\r\n *\r\n * By default, the owner account will be the one that deploys the contract. This\r\n * can later be changed with {transferOwnership}.\r\n *\r\n * This module is used through inheritance. It will make available the modifier\r\n * `onlyOwner`, which can be applied to your functions to restrict their use to\r\n * the owner.\r\n */\r\nabstract contract Ownable is Context {\r\n    address private _owner;\r\n\r\n    event OwnershipTransferred(\r\n        address indexed previousOwner,\r\n        address indexed newOwner\r\n    );\r\n\r\n    /**\r\n     * @dev Initializes the contract setting the deployer as the initial owner.\r\n     */\r\n    constructor() {\r\n        _setOwner(_msgSender());\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the address of the current owner.\r\n     */\r\n    function owner() public view virtual returns (address) {\r\n        return _owner;\r\n    }\r\n\r\n    /**\r\n     * @dev Throws if called by any account other than the owner.\r\n     */\r\n    modifier onlyOwner() {\r\n        require(owner() == _msgSender(), \"Ownable: caller is not the owner\");\r\n        _;\r\n    }\r\n\r\n    /**\r\n     * @dev Leaves the contract without owner. It will not be possible to call\r\n     * `onlyOwner` functions anymore. Can only be called by the current owner.\r\n     *\r\n     * NOTE: Renouncing ownership will leave the contract without an owner,\r\n     * thereby removing any functionality that is only available to the owner.\r\n     */\r\n    function renounceOwnership() public virtual onlyOwner {\r\n        _setOwner(address(0));\r\n    }\r\n\r\n    /**\r\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\r\n     * Can only be called by the current owner.\r\n     */\r\n    function transferOwnership(address newOwner) public virtual onlyOwner {\r\n        require(\r\n            newOwner != address(0),\r\n            \"Ownable: new owner is the zero address\"\r\n        );\r\n        _setOwner(newOwner);\r\n    }\r\n\r\n    function _setOwner(address newOwner) private {\r\n        address oldOwner = _owner;\r\n        _owner = newOwner;\r\n        emit OwnershipTransferred(oldOwner, newOwner);\r\n    }\r\n}\r\n\r\n/**\r\n * @title A simple holder of tokens.\r\n * This is a simple contract to hold tokens. It's useful in the case where a separate contract\r\n * needs to hold multiple distinct pools of the same token.\r\n */\r\ncontract TokenPool is Ownable {\r\n    IERC20 public token;\r\n\r\n    constructor(IERC20 _token) {\r\n        token = _token;\r\n    }\r\n\r\n    function balance() external view returns (uint256) {\r\n        return token.balanceOf(address(this));\r\n    }\r\n\r\n    function transfer(address to, uint256 value)\r\n        external\r\n        onlyOwner\r\n        returns (bool)\r\n    {\r\n        return token.transfer(to, value);\r\n    }\r\n}\r\n\r\n/**\r\n * @dev Contract module that helps prevent reentrant calls to a function.\r\n *\r\n * Inheriting from `ReentrancyGuard` will make the {nonReentrant} modifier\r\n * available, which can be applied to functions to make sure there are no nested\r\n * (reentrant) calls to them.\r\n *\r\n * Note that because there is a single `nonReentrant` guard, functions marked as\r\n * `nonReentrant` may not call one another. This can be worked around by making\r\n * those functions `private`, and then adding `external` `nonReentrant` entry\r\n * points to them.\r\n *\r\n * TIP: If you would like to learn more about reentrancy and alternative ways\r\n * to protect against it, check out our blog post\r\n * https://blog.openzeppelin.com/reentrancy-after-istanbul/[Reentrancy After Istanbul].\r\n */\r\nabstract contract ReentrancyGuard {\r\n    // Booleans are more expensive than uint256 or any type that takes up a full\r\n    // word because each write operation emits an extra SLOAD to first read the\r\n    // slot's contents, replace the bits taken up by the boolean, and then write\r\n    // back. This is the compiler's defense against contract upgrades and\r\n    // pointer aliasing, and it cannot be disabled.\r\n\r\n    // The values being non-zero value makes deployment a bit more expensive,\r\n    // but in exchange the refund on every call to nonReentrant will be lower in\r\n    // amount. Since refunds are capped to a percentage of the total\r\n    // transaction's gas, it is best to keep them low in cases like this one, to\r\n    // increase the likelihood of the full refund coming into effect.\r\n    uint256 private constant _NOT_ENTERED = 1;\r\n    uint256 private constant _ENTERED = 2;\r\n\r\n    uint256 private _status;\r\n\r\n    constructor() {\r\n        _status = _NOT_ENTERED;\r\n    }\r\n\r\n    /**\r\n     * @dev Prevents a contract from calling itself, directly or indirectly.\r\n     * Calling a `nonReentrant` function from another `nonReentrant`\r\n     * function is not supported. It is possible to prevent this from happening\r\n     * by making the `nonReentrant` function external, and make it call a\r\n     * `private` function that does the actual work.\r\n     */\r\n    modifier nonReentrant() {\r\n        // On the first call to nonReentrant, _notEntered will be true\r\n        require(_status != _ENTERED, \"ReentrancyGuard: reentrant call\");\r\n\r\n        // Any calls to nonReentrant after this point will fail\r\n        _status = _ENTERED;\r\n\r\n        _;\r\n\r\n        // By storing the original value once again, a refund is triggered (see\r\n        // https://eips.ethereum.org/EIPS/eip-2200)\r\n        _status = _NOT_ENTERED;\r\n    }\r\n}\r\n\r\n/**\r\n * @dev External interface of AccessControl declared to support ERC165 detection.\r\n */\r\ninterface IAccessControl {\r\n    /**\r\n     * @dev Emitted when `newAdminRole` is set as ``role``'s admin role, replacing `previousAdminRole`\r\n     *\r\n     * `DEFAULT_ADMIN_ROLE` is the starting admin for all roles, despite\r\n     * {RoleAdminChanged} not being emitted signaling this.\r\n     *\r\n     * _Available since v3.1._\r\n     */\r\n    event RoleAdminChanged(\r\n        bytes32 indexed role,\r\n        bytes32 indexed previousAdminRole,\r\n        bytes32 indexed newAdminRole\r\n    );\r\n\r\n    /**\r\n     * @dev Emitted when `account` is granted `role`.\r\n     *\r\n     * `sender` is the account that originated the contract call, an admin role\r\n     * bearer except when using {AccessControl-_setupRole}.\r\n     */\r\n    event RoleGranted(\r\n        bytes32 indexed role,\r\n        address indexed account,\r\n        address indexed sender\r\n    );\r\n\r\n    /**\r\n     * @dev Emitted when `account` is revoked `role`.\r\n     *\r\n     * `sender` is the account that originated the contract call:\r\n     *   - if using `revokeRole`, it is the admin role bearer\r\n     *   - if using `renounceRole`, it is the role bearer (i.e. `account`)\r\n     */\r\n    event RoleRevoked(\r\n        bytes32 indexed role,\r\n        address indexed account,\r\n        address indexed sender\r\n    );\r\n\r\n    /**\r\n     * @dev Returns `true` if `account` has been granted `role`.\r\n     */\r\n    function hasRole(bytes32 role, address account)\r\n        external\r\n        view\r\n        returns (bool);\r\n\r\n    /**\r\n     * @dev Returns the admin role that controls `role`. See {grantRole} and\r\n     * {revokeRole}.\r\n     *\r\n     * To change a role's admin, use {AccessControl-_setRoleAdmin}.\r\n     */\r\n    function getRoleAdmin(bytes32 role) external view returns (bytes32);\r\n\r\n    /**\r\n     * @dev Grants `role` to `account`.\r\n     *\r\n     * If `account` had not been already granted `role`, emits a {RoleGranted}\r\n     * event.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - the caller must have ``role``'s admin role.\r\n     */\r\n    function grantRole(bytes32 role, address account) external;\r\n\r\n    /**\r\n     * @dev Revokes `role` from `account`.\r\n     *\r\n     * If `account` had been granted `role`, emits a {RoleRevoked} event.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - the caller must have ``role``'s admin role.\r\n     */\r\n    function revokeRole(bytes32 role, address account) external;\r\n\r\n    /**\r\n     * @dev Revokes `role` from the calling account.\r\n     *\r\n     * Roles are often managed via {grantRole} and {revokeRole}: this function's\r\n     * purpose is to provide a mechanism for accounts to lose their privileges\r\n     * if they are compromised (such as when a trusted device is misplaced).\r\n     *\r\n     * If the calling account had been granted `role`, emits a {RoleRevoked}\r\n     * event.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - the caller must be `account`.\r\n     */\r\n    function renounceRole(bytes32 role, address account) external;\r\n}\r\n\r\n/**\r\n * @dev String operations.\r\n */\r\nlibrary Strings {\r\n    bytes16 private constant _HEX_SYMBOLS = \"0123456789abcdef\";\r\n\r\n    /**\r\n     * @dev Converts a `uint256` to its ASCII `string` decimal representation.\r\n     */\r\n    function toString(uint256 value) internal pure returns (string memory) {\r\n        // Inspired by OraclizeAPI's implementation - MIT licence\r\n        // https://github.com/oraclize/ethereum-api/blob/b42146b063c7d6ee1358846c198246239e9360e8/oraclizeAPI_0.4.25.sol\r\n\r\n        if (value == 0) {\r\n            return \"0\";\r\n        }\r\n        uint256 temp = value;\r\n        uint256 digits;\r\n        while (temp != 0) {\r\n            digits++;\r\n            temp /= 10;\r\n        }\r\n        bytes memory buffer = new bytes(digits);\r\n        while (value != 0) {\r\n            digits -= 1;\r\n            buffer[digits] = bytes1(uint8(48 + uint256(value % 10)));\r\n            value /= 10;\r\n        }\r\n        return string(buffer);\r\n    }\r\n\r\n    /**\r\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation.\r\n     */\r\n    function toHexString(uint256 value) internal pure returns (string memory) {\r\n        if (value == 0) {\r\n            return \"0x00\";\r\n        }\r\n        uint256 temp = value;\r\n        uint256 length = 0;\r\n        while (temp != 0) {\r\n            length++;\r\n            temp >>= 8;\r\n        }\r\n        return toHexString(value, length);\r\n    }\r\n\r\n    /**\r\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation with fixed length.\r\n     */\r\n    function toHexString(uint256 value, uint256 length)\r\n        internal\r\n        pure\r\n        returns (string memory)\r\n    {\r\n        bytes memory buffer = new bytes(2 * length + 2);\r\n        buffer[0] = \"0\";\r\n        buffer[1] = \"x\";\r\n        for (uint256 i = 2 * length + 1; i > 1; --i) {\r\n            buffer[i] = _HEX_SYMBOLS[value & 0xf];\r\n            value >>= 4;\r\n        }\r\n        require(value == 0, \"Strings: hex length insufficient\");\r\n        return string(buffer);\r\n    }\r\n}\r\n\r\n/**\r\n * @dev Implementation of the {IERC165} interface.\r\n *\r\n * Contracts that want to implement ERC165 should inherit from this contract and override {supportsInterface} to check\r\n * for the additional interface id that will be supported. For example:\r\n *\r\n * ```solidity\r\n * function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {\r\n *     return interfaceId == type(MyInterface).interfaceId || super.supportsInterface(interfaceId);\r\n * }\r\n * ```\r\n *\r\n * Alternatively, {ERC165Storage} provides an easier to use but more expensive implementation.\r\n */\r\nabstract contract ERC165 is IERC165 {\r\n    /**\r\n     * @dev See {IERC165-supportsInterface}.\r\n     */\r\n    function supportsInterface(bytes4 interfaceId)\r\n        public\r\n        view\r\n        virtual\r\n        override\r\n        returns (bool)\r\n    {\r\n        return interfaceId == type(IERC165).interfaceId;\r\n    }\r\n}\r\n\r\n/**\r\n * @dev Contract module that allows children to implement role-based access\r\n * control mechanisms. This is a lightweight version that doesn't allow enumerating role\r\n * members except through off-chain means by accessing the contract event logs. Some\r\n * applications may benefit from on-chain enumerability, for those cases see\r\n * {AccessControlEnumerable}.\r\n *\r\n * Roles are referred to by their `bytes32` identifier. These should be exposed\r\n * in the external API and be unique. The best way to achieve this is by\r\n * using `public constant` hash digests:\r\n *\r\n * ```\r\n * bytes32 public constant MY_ROLE = keccak256(\"MY_ROLE\");\r\n * ```\r\n *\r\n * Roles can be used to represent a set of permissions. To restrict access to a\r\n * function call, use {hasRole}:\r\n *\r\n * ```\r\n * function foo() public {\r\n *     require(hasRole(MY_ROLE, msg.sender));\r\n *     ...\r\n * }\r\n * ```\r\n *\r\n * Roles can be granted and revoked dynamically via the {grantRole} and\r\n * {revokeRole} functions. Each role has an associated admin role, and only\r\n * accounts that have a role's admin role can call {grantRole} and {revokeRole}.\r\n *\r\n * By default, the admin role for all roles is `DEFAULT_ADMIN_ROLE`, which means\r\n * that only accounts with this role will be able to grant or revoke other\r\n * roles. More complex role relationships can be created by using\r\n * {_setRoleAdmin}.\r\n *\r\n * WARNING: The `DEFAULT_ADMIN_ROLE` is also its own admin: it has permission to\r\n * grant and revoke this role. Extra precautions should be taken to secure\r\n * accounts that have been granted it.\r\n */\r\nabstract contract AccessControl is Context, IAccessControl, ERC165 {\r\n    struct RoleData {\r\n        mapping(address => bool) members;\r\n        bytes32 adminRole;\r\n    }\r\n\r\n    mapping(bytes32 => RoleData) private _roles;\r\n\r\n    bytes32 public constant DEFAULT_ADMIN_ROLE = 0x00;\r\n\r\n    /**\r\n     * @dev Modifier that checks that an account has a specific role. Reverts\r\n     * with a standardized message including the required role.\r\n     *\r\n     * The format of the revert reason is given by the following regular expression:\r\n     *\r\n     *  /^AccessControl: account (0x[0-9a-f]{40}) is missing role (0x[0-9a-f]{64})$/\r\n     *\r\n     * _Available since v4.1._\r\n     */\r\n    modifier onlyRole(bytes32 role) {\r\n        _checkRole(role, _msgSender());\r\n        _;\r\n    }\r\n\r\n    /**\r\n     * @dev See {IERC165-supportsInterface}.\r\n     */\r\n    function supportsInterface(bytes4 interfaceId)\r\n        public\r\n        view\r\n        virtual\r\n        override\r\n        returns (bool)\r\n    {\r\n        return\r\n            interfaceId == type(IAccessControl).interfaceId ||\r\n            super.supportsInterface(interfaceId);\r\n    }\r\n\r\n    /**\r\n     * @dev Returns `true` if `account` has been granted `role`.\r\n     */\r\n    function hasRole(bytes32 role, address account)\r\n        public\r\n        view\r\n        override\r\n        returns (bool)\r\n    {\r\n        return _roles[role].members[account];\r\n    }\r\n\r\n    /**\r\n     * @dev Revert with a standard message if `account` is missing `role`.\r\n     *\r\n     * The format of the revert reason is given by the following regular expression:\r\n     *\r\n     *  /^AccessControl: account (0x[0-9a-f]{40}) is missing role (0x[0-9a-f]{64})$/\r\n     */\r\n    function _checkRole(bytes32 role, address account) internal view {\r\n        if (!hasRole(role, account)) {\r\n            revert(\r\n                string(\r\n                    abi.encodePacked(\r\n                        \"AccessControl: account \",\r\n                        Strings.toHexString(uint160(account), 20),\r\n                        \" is missing role \",\r\n                        Strings.toHexString(uint256(role), 32)\r\n                    )\r\n                )\r\n            );\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the admin role that controls `role`. See {grantRole} and\r\n     * {revokeRole}.\r\n     *\r\n     * To change a role's admin, use {_setRoleAdmin}.\r\n     */\r\n    function getRoleAdmin(bytes32 role) public view override returns (bytes32) {\r\n        return _roles[role].adminRole;\r\n    }\r\n\r\n    /**\r\n     * @dev Grants `role` to `account`.\r\n     *\r\n     * If `account` had not been already granted `role`, emits a {RoleGranted}\r\n     * event.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - the caller must have ``role``'s admin role.\r\n     */\r\n    function grantRole(bytes32 role, address account)\r\n        public\r\n        virtual\r\n        override\r\n        onlyRole(getRoleAdmin(role))\r\n    {\r\n        _grantRole(role, account);\r\n    }\r\n\r\n    /**\r\n     * @dev Revokes `role` from `account`.\r\n     *\r\n     * If `account` had been granted `role`, emits a {RoleRevoked} event.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - the caller must have ``role``'s admin role.\r\n     */\r\n    function revokeRole(bytes32 role, address account)\r\n        public\r\n        virtual\r\n        override\r\n        onlyRole(getRoleAdmin(role))\r\n    {\r\n        _revokeRole(role, account);\r\n    }\r\n\r\n    /**\r\n     * @dev Revokes `role` from the calling account.\r\n     *\r\n     * Roles are often managed via {grantRole} and {revokeRole}: this function's\r\n     * purpose is to provide a mechanism for accounts to lose their privileges\r\n     * if they are compromised (such as when a trusted device is misplaced).\r\n     *\r\n     * If the calling account had been granted `role`, emits a {RoleRevoked}\r\n     * event.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - the caller must be `account`.\r\n     */\r\n    function renounceRole(bytes32 role, address account)\r\n        public\r\n        virtual\r\n        override\r\n    {\r\n        require(\r\n            account == _msgSender(),\r\n            \"AccessControl: can only renounce roles for self\"\r\n        );\r\n\r\n        _revokeRole(role, account);\r\n    }\r\n\r\n    /**\r\n     * @dev Grants `role` to `account`.\r\n     *\r\n     * If `account` had not been already granted `role`, emits a {RoleGranted}\r\n     * event. Note that unlike {grantRole}, this function doesn't perform any\r\n     * checks on the calling account.\r\n     *\r\n     * [WARNING]\r\n     * ====\r\n     * This function should only be called from the constructor when setting\r\n     * up the initial roles for the system.\r\n     *\r\n     * Using this function in any other way is effectively circumventing the admin\r\n     * system imposed by {AccessControl}.\r\n     * ====\r\n     */\r\n    function _setupRole(bytes32 role, address account) internal virtual {\r\n        _grantRole(role, account);\r\n    }\r\n\r\n    /**\r\n     * @dev Sets `adminRole` as ``role``'s admin role.\r\n     *\r\n     * Emits a {RoleAdminChanged} event.\r\n     */\r\n    function _setRoleAdmin(bytes32 role, bytes32 adminRole) internal virtual {\r\n        bytes32 previousAdminRole = getRoleAdmin(role);\r\n        _roles[role].adminRole = adminRole;\r\n        emit RoleAdminChanged(role, previousAdminRole, adminRole);\r\n    }\r\n\r\n    function _grantRole(bytes32 role, address account) private {\r\n        if (!hasRole(role, account)) {\r\n            _roles[role].members[account] = true;\r\n            emit RoleGranted(role, account, _msgSender());\r\n        }\r\n    }\r\n\r\n    function _revokeRole(bytes32 role, address account) private {\r\n        if (hasRole(role, account)) {\r\n            _roles[role].members[account] = false;\r\n            emit RoleRevoked(role, account, _msgSender());\r\n        }\r\n    }\r\n}\r\n\r\n/**\r\n * @dev Wrappers over Solidity's arithmetic operations.\r\n *\r\n * NOTE: `SafeMath` is no longer needed starting with Solidity 0.8. The compiler\r\n * now has built in overflow checking.\r\n */\r\nlibrary SafeMath {\r\n    /**\r\n     * @dev Returns the addition of two unsigned integers, with an overflow flag.\r\n     *\r\n     * _Available since v3.4._\r\n     */\r\n    function tryAdd(uint256 a, uint256 b)\r\n        internal\r\n        pure\r\n        returns (bool, uint256)\r\n    {\r\n        unchecked {\r\n            uint256 c = a + b;\r\n            if (c < a) return (false, 0);\r\n            return (true, c);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the substraction of two unsigned integers, with an overflow flag.\r\n     *\r\n     * _Available since v3.4._\r\n     */\r\n    function trySub(uint256 a, uint256 b)\r\n        internal\r\n        pure\r\n        returns (bool, uint256)\r\n    {\r\n        unchecked {\r\n            if (b > a) return (false, 0);\r\n            return (true, a - b);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the multiplication of two unsigned integers, with an overflow flag.\r\n     *\r\n     * _Available since v3.4._\r\n     */\r\n    function tryMul(uint256 a, uint256 b)\r\n        internal\r\n        pure\r\n        returns (bool, uint256)\r\n    {\r\n        unchecked {\r\n            // Gas optimization: this is cheaper than requiring 'a' not being zero, but the\r\n            // benefit is lost if 'b' is also tested.\r\n            // See: https://github.com/OpenZeppelin/openzeppelin-contracts/pull/522\r\n            if (a == 0) return (true, 0);\r\n            uint256 c = a * b;\r\n            if (c / a != b) return (false, 0);\r\n            return (true, c);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the division of two unsigned integers, with a division by zero flag.\r\n     *\r\n     * _Available since v3.4._\r\n     */\r\n    function tryDiv(uint256 a, uint256 b)\r\n        internal\r\n        pure\r\n        returns (bool, uint256)\r\n    {\r\n        unchecked {\r\n            if (b == 0) return (false, 0);\r\n            return (true, a / b);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the remainder of dividing two unsigned integers, with a division by zero flag.\r\n     *\r\n     * _Available since v3.4._\r\n     */\r\n    function tryMod(uint256 a, uint256 b)\r\n        internal\r\n        pure\r\n        returns (bool, uint256)\r\n    {\r\n        unchecked {\r\n            if (b == 0) return (false, 0);\r\n            return (true, a % b);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the addition of two unsigned integers, reverting on\r\n     * overflow.\r\n     *\r\n     * Counterpart to Solidity's `+` operator.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - Addition cannot overflow.\r\n     */\r\n    function add(uint256 a, uint256 b) internal pure returns (uint256) {\r\n        return a + b;\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the subtraction of two unsigned integers, reverting on\r\n     * overflow (when the result is negative).\r\n     *\r\n     * Counterpart to Solidity's `-` operator.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - Subtraction cannot overflow.\r\n     */\r\n    function sub(uint256 a, uint256 b) internal pure returns (uint256) {\r\n        return a - b;\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the multiplication of two unsigned integers, reverting on\r\n     * overflow.\r\n     *\r\n     * Counterpart to Solidity's `*` operator.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - Multiplication cannot overflow.\r\n     */\r\n    function mul(uint256 a, uint256 b) internal pure returns (uint256) {\r\n        return a * b;\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the integer division of two unsigned integers, reverting on\r\n     * division by zero. The result is rounded towards zero.\r\n     *\r\n     * Counterpart to Solidity's `/` operator.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - The divisor cannot be zero.\r\n     */\r\n    function div(uint256 a, uint256 b) internal pure returns (uint256) {\r\n        return a / b;\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),\r\n     * reverting when dividing by zero.\r\n     *\r\n     * Counterpart to Solidity's `%` operator. This function uses a `revert`\r\n     * opcode (which leaves remaining gas untouched) while Solidity uses an\r\n     * invalid opcode to revert (consuming all remaining gas).\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - The divisor cannot be zero.\r\n     */\r\n    function mod(uint256 a, uint256 b) internal pure returns (uint256) {\r\n        return a % b;\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the subtraction of two unsigned integers, reverting with custom message on\r\n     * overflow (when the result is negative).\r\n     *\r\n     * CAUTION: This function is deprecated because it requires allocating memory for the error\r\n     * message unnecessarily. For custom revert reasons use {trySub}.\r\n     *\r\n     * Counterpart to Solidity's `-` operator.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - Subtraction cannot overflow.\r\n     */\r\n    function sub(\r\n        uint256 a,\r\n        uint256 b,\r\n        string memory errorMessage\r\n    ) internal pure returns (uint256) {\r\n        unchecked {\r\n            require(b <= a, errorMessage);\r\n            return a - b;\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the integer division of two unsigned integers, reverting with custom message on\r\n     * division by zero. The result is rounded towards zero.\r\n     *\r\n     * Counterpart to Solidity's `/` operator. Note: this function uses a\r\n     * `revert` opcode (which leaves remaining gas untouched) while Solidity\r\n     * uses an invalid opcode to revert (consuming all remaining gas).\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - The divisor cannot be zero.\r\n     */\r\n    function div(\r\n        uint256 a,\r\n        uint256 b,\r\n        string memory errorMessage\r\n    ) internal pure returns (uint256) {\r\n        unchecked {\r\n            require(b > 0, errorMessage);\r\n            return a / b;\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),\r\n     * reverting with custom message when dividing by zero.\r\n     *\r\n     * CAUTION: This function is deprecated because it requires allocating memory for the error\r\n     * message unnecessarily. For custom revert reasons use {tryMod}.\r\n     *\r\n     * Counterpart to Solidity's `%` operator. This function uses a `revert`\r\n     * opcode (which leaves remaining gas untouched) while Solidity uses an\r\n     * invalid opcode to revert (consuming all remaining gas).\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - The divisor cannot be zero.\r\n     */\r\n    function mod(\r\n        uint256 a,\r\n        uint256 b,\r\n        string memory errorMessage\r\n    ) internal pure returns (uint256) {\r\n        unchecked {\r\n            require(b > 0, errorMessage);\r\n            return a % b;\r\n        }\r\n    }\r\n}\r\n\r\ncontract TrodlStake is ReentrancyGuard, AccessControl {\r\n    using SafeMath for uint256;\r\n\r\n    event Staked(address indexed user, uint256 amount, uint256 total);\r\n    event Unstaked(address indexed user, uint256 amount, uint256 total);\r\n    event Withdraw(address indexed user, uint256 amount, uint256 total);\r\n    event ReStake(address indexed user, uint256 amount, uint256 total);\r\n    event RewardUsed(address indexed user, uint256 amount);\r\n\r\n    bytes32 REWARD_USER = keccak256(bytes(\"REWARD_USER\"));\r\n    uint256 public _apy; // annual percentage yield\r\n    uint256 public _lockupPeriod; // Lock Up period in days\r\n\r\n    TokenPool private _troStakingPool;\r\n\r\n    struct UserRewardInfo {\r\n        uint256 stakedAmount;\r\n        uint256 unstakedAmount;\r\n        uint256 rewardMinted;\r\n        uint256 rewardUsed;\r\n        uint256 lastAccountingTimestampSec;\r\n    }\r\n\r\n    mapping(address => UserRewardInfo) private _userRewards;\r\n\r\n    address[] private _stakers;\r\n\r\n    constructor(\r\n        IERC20 token,\r\n        uint256 apy,\r\n        uint256 lockupPeriod\r\n    ) {\r\n        _apy = apy;\r\n        _lockupPeriod = lockupPeriod;\r\n        _troStakingPool = new TokenPool(token);\r\n        _setupRole(DEFAULT_ADMIN_ROLE, msg.sender); // To grant IDO to REWARD_USER role later on\r\n    }\r\n\r\n    function stake(uint256 amount) public nonReentrant {\r\n        require(amount > 0, \"TrodlStake: stake amount ZERO\");\r\n\r\n        UserRewardInfo memory userRewardInfo = _userRewards[msg.sender];\r\n\r\n        // uint256 actualTransferAmount = _getTransactionAmount(amount);\r\n\r\n        bool mathStatus;\r\n\r\n        if (userRewardInfo.lastAccountingTimestampSec == 0) {\r\n            _stakers.push(msg.sender);\r\n        }\r\n        if (userRewardInfo.lastAccountingTimestampSec != 0) {\r\n            //calculate applicable rewards so far and add it\r\n            uint256 rewardsUntilNow = calculateReward(userRewardInfo);\r\n\r\n            (mathStatus, userRewardInfo.rewardMinted) = userRewardInfo\r\n                .rewardMinted\r\n                .tryAdd(rewardsUntilNow);\r\n            require(mathStatus == true, \"TrodlStake: Math Error\");\r\n        }\r\n\r\n        (mathStatus, userRewardInfo.stakedAmount) = userRewardInfo\r\n            .stakedAmount\r\n            .tryAdd(amount);\r\n        require(mathStatus == true, \"TrodlStake: Math Error\");\r\n\r\n        userRewardInfo.lastAccountingTimestampSec = block.timestamp;\r\n        _userRewards[msg.sender] = userRewardInfo;\r\n\r\n        try\r\n            _troStakingPool.token().transferFrom(\r\n                msg.sender,\r\n                address(_troStakingPool),\r\n                amount\r\n            )\r\n        returns (bool) {\r\n            emit Staked(msg.sender, amount, userRewardInfo.stakedAmount);\r\n        } catch Error(string memory) {\r\n            revert(\"TrodlStake: Failed transfer to staking pool\");\r\n        } catch (bytes memory) {\r\n            // This is executed in case revert() was used.\r\n            revert(\"TrodlStake: Failed transfer to staking pool\");\r\n        }\r\n    }\r\n\r\n    function unstakeAll() public {\r\n        unstake(_userRewards[msg.sender].stakedAmount);\r\n    }\r\n\r\n    function unstake(uint256 amount) public nonReentrant {\r\n        require(amount > 0, \"TrodlStake: Require Non Zero Value\");\r\n\r\n        UserRewardInfo storage userRewardInfo = _userRewards[msg.sender];\r\n        // require(userRewardInfo.stakedAmount > 0, \"TrodlStake: No Staked TRO\");\r\n        require(\r\n            amount <= userRewardInfo.stakedAmount,\r\n            \"TrodlStake: Not enough Staked TRO\"\r\n        );\r\n\r\n        bool mathStatus;\r\n        uint256 rewardsUntilNow = calculateReward(userRewardInfo);\r\n\r\n        (mathStatus, userRewardInfo.rewardMinted) = userRewardInfo\r\n            .rewardMinted\r\n            .tryAdd(rewardsUntilNow);\r\n        require(mathStatus == true, \"TrodlStake: Math Error\");\r\n\r\n        (mathStatus, userRewardInfo.stakedAmount) = userRewardInfo\r\n            .stakedAmount\r\n            .trySub(amount);\r\n        require(mathStatus == true, \"TrodlStake: Math Error\");\r\n\r\n        (mathStatus, userRewardInfo.unstakedAmount) = userRewardInfo\r\n            .unstakedAmount\r\n            .tryAdd(amount);\r\n        require(mathStatus == true, \"TrodlStake: Math Error\");\r\n\r\n        userRewardInfo.lastAccountingTimestampSec = block.timestamp;\r\n\r\n        emit Unstaked(msg.sender, amount, userRewardInfo.stakedAmount);\r\n    }\r\n\r\n    function withdrawAllTRO() public {\r\n        return withdrawTRO(_userRewards[msg.sender].unstakedAmount);\r\n    }\r\n\r\n    function withdrawTRO(uint256 amount) public nonReentrant {\r\n        require(amount > 0, \"TrodlStake: Require Non Zero Value\");\r\n\r\n        UserRewardInfo storage userRewardInfo = _userRewards[msg.sender];\r\n\r\n        require(\r\n            amount <= userRewardInfo.unstakedAmount,\r\n            \"TrodlStake: Not enough Un-Staked TRO\"\r\n        );\r\n\r\n        require(\r\n            block.timestamp >=\r\n                (userRewardInfo.lastAccountingTimestampSec +\r\n                    (_lockupPeriod * 1 days)),\r\n            \"TrodlStake: Withdraw in LockPeriod\"\r\n        );\r\n\r\n        bool mathStatus;\r\n        if (userRewardInfo.stakedAmount > 0) {\r\n            uint256 rewardsUntilNow = calculateReward(userRewardInfo);\r\n\r\n            (mathStatus, userRewardInfo.rewardMinted) = userRewardInfo\r\n                .rewardMinted\r\n                .tryAdd(rewardsUntilNow);\r\n            require(mathStatus == true, \"TrodlStake: Math Error\");\r\n        }\r\n\r\n        (mathStatus, userRewardInfo.unstakedAmount) = userRewardInfo\r\n            .unstakedAmount\r\n            .trySub(amount);\r\n        require(mathStatus == true, \"TrodlStake: Math Error\");\r\n\r\n        userRewardInfo.lastAccountingTimestampSec = block.timestamp;\r\n\r\n        try _troStakingPool.transfer(msg.sender, amount) returns (bool) {\r\n            // uint256 actualTransferAmount = _getTransactionAmount(amount);\r\n            emit Withdraw(msg.sender, amount, userRewardInfo.stakedAmount);\r\n        } catch Error(string memory) {\r\n            revert(\"TrodlStake: Transfer Error from Pool\");\r\n        } catch (bytes memory) {\r\n            revert(\"TrodlStake: Transfer Error from Pool\");\r\n        }\r\n    }\r\n\r\n    function reStake() public nonReentrant {\r\n        UserRewardInfo storage userRewardInfo = _userRewards[msg.sender];\r\n\r\n        uint256 restakeAmount = userRewardInfo.unstakedAmount;\r\n\r\n        bool mathStatus;\r\n\r\n        //calculate applicable rewards so far and add it\r\n        if (userRewardInfo.stakedAmount > 0) {\r\n            uint256 rewardsUntilNow = calculateReward(userRewardInfo);\r\n\r\n            (mathStatus, userRewardInfo.rewardMinted) = userRewardInfo\r\n                .rewardMinted\r\n                .tryAdd(rewardsUntilNow);\r\n            require(mathStatus == true, \"TrodlStake: Math Error\");\r\n        }\r\n\r\n        (mathStatus, userRewardInfo.stakedAmount) = userRewardInfo\r\n            .stakedAmount\r\n            .tryAdd(userRewardInfo.unstakedAmount);\r\n        require(mathStatus == true, \"TrodlStake: Math Error\");\r\n\r\n        userRewardInfo.unstakedAmount = 0;\r\n        userRewardInfo.lastAccountingTimestampSec = block.timestamp;\r\n\r\n        emit ReStake(msg.sender, restakeAmount, userRewardInfo.stakedAmount);\r\n        restakeAmount = 0;\r\n    }\r\n\r\n    function usexTRO(uint256 amount, address user) public {\r\n        require(\r\n            hasRole(REWARD_USER, msg.sender),\r\n            \"TrodlStake: Address cannot use rewards\"\r\n        );\r\n\r\n        UserRewardInfo storage userRewardInfo = _userRewards[user];\r\n\r\n        bool mathStatus;\r\n        if (userRewardInfo.stakedAmount > 0) {\r\n            //calculate applicable rewards so far and add it\r\n            uint256 rewardsUntilNow = calculateReward(userRewardInfo);\r\n\r\n            (mathStatus, userRewardInfo.rewardMinted) = userRewardInfo\r\n                .rewardMinted\r\n                .tryAdd(rewardsUntilNow);\r\n\r\n            require(mathStatus == true, \"TrodlStake: Math Error\");\r\n        }\r\n\r\n        uint256 usableRewards;\r\n        (mathStatus, usableRewards) = userRewardInfo.rewardMinted.trySub(\r\n            userRewardInfo.rewardUsed\r\n        );\r\n\r\n        require(amount <= usableRewards, \"TrodlStake: Insufficient Rewards\");\r\n\r\n        (mathStatus, userRewardInfo.rewardUsed) = userRewardInfo\r\n            .rewardUsed\r\n            .tryAdd(amount);\r\n\r\n        userRewardInfo.lastAccountingTimestampSec = block.timestamp;\r\n\r\n        emit RewardUsed(msg.sender, amount);\r\n    }\r\n\r\n    function grantRewardUserRole(address rewardUser) public {\r\n        grantRole(REWARD_USER, rewardUser);\r\n    }\r\n\r\n    function revokeRewardUserRole(address rewardUser) public {\r\n        revokeRole(REWARD_USER, rewardUser);\r\n    }\r\n\r\n    // function _getTransactionAmount(uint256 amount)\r\n    //     private\r\n    //     pure\r\n    //     returns (uint256)\r\n    // {\r\n    //     uint256 tokFeeHalf = amount.div(200);\r\n    //     uint256 tFee = tokFeeHalf.mul(2);\r\n    //     uint256 tokTransferAmount = amount.sub(tFee);\r\n    //     return tokTransferAmount;\r\n    // }\r\n\r\n    function calculateReward(UserRewardInfo memory userRewardInfo)\r\n        private\r\n        view\r\n        returns (uint256)\r\n    {\r\n        uint256 currentRewards = userRewardInfo.stakedAmount.mul(_apy).mul(\r\n            block.timestamp.sub(userRewardInfo.lastAccountingTimestampSec)\r\n        );\r\n\r\n        return currentRewards.div(8640000);\r\n    }\r\n\r\n    function getxTROBalance(address user) public view returns (uint256) {\r\n        UserRewardInfo memory userRewardInfo = _userRewards[user];\r\n        uint256 currentRewards = calculateReward(userRewardInfo);\r\n\r\n        bool mathStatus;\r\n\r\n        uint256 balance = userRewardInfo.rewardMinted.add(currentRewards);\r\n        (mathStatus, balance) = balance.trySub(userRewardInfo.rewardUsed);\r\n\r\n        return balance;\r\n    }\r\n\r\n    function getTotalxTRO() public view returns (uint256) {\r\n        uint256 balance;\r\n        for (uint256 i = 0; i < _stakers.length; i++) {\r\n            balance = balance.add(getxTROBalance(_stakers[i])).add(\r\n                _userRewards[_stakers[i]].rewardUsed\r\n            );\r\n        }\r\n        return balance;\r\n    }\r\n\r\n    function getStakedTROBalance() public view returns (uint256) {\r\n        return _userRewards[msg.sender].stakedAmount;\r\n    }\r\n\r\n    function getUnstakedTROBalance() public view returns (uint256) {\r\n        return _userRewards[msg.sender].unstakedAmount;\r\n    }\r\n\r\n    function getTotalTROStaked() public view returns (uint256) {\r\n        return _troStakingPool.balance();\r\n    }\r\n\r\n    function getTROStakingPool() public view returns (address) {\r\n        return address(_troStakingPool);\r\n    }\r\n\r\n    function getAllStakers() public view returns (address[] memory) {\r\n        return _stakers;\r\n    }\r\n\r\n    function getUserRewardInfo(address user)\r\n        public\r\n        view\r\n        returns (UserRewardInfo memory info)\r\n    {\r\n        return _userRewards[user];\r\n    }\r\n}\r\n",
+  "source": "// SPDX-License-Identifier: GPL-3.0-only\r\npragma solidity 0.8.9;\r\n\r\n/**\r\n * @dev Interface of the ERC165 standard, as defined in the\r\n * https://eips.ethereum.org/EIPS/eip-165[EIP].\r\n *\r\n * Implementers can declare support of contract interfaces, which can then be\r\n * queried by others ({ERC165Checker}).\r\n *\r\n * For an implementation, see {ERC165}.\r\n */\r\ninterface IERC165 {\r\n    /**\r\n     * @dev Returns true if this contract implements the interface defined by\r\n     * `interfaceId`. See the corresponding\r\n     * https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section]\r\n     * to learn more about how these ids are created.\r\n     *\r\n     * This function call must use less than 30 000 gas.\r\n     */\r\n    function supportsInterface(bytes4 interfaceId) external view returns (bool);\r\n}\r\n\r\n/**\r\n * @dev Interface of the ERC20 standard as defined in the EIP.\r\n */\r\ninterface IERC20 {\r\n    /**\r\n     * @dev Returns the amount of tokens in existence.\r\n     */\r\n    function totalSupply() external view returns (uint256);\r\n\r\n    /**\r\n     * @dev Returns the amount of tokens owned by `account`.\r\n     */\r\n    function balanceOf(address account) external view returns (uint256);\r\n\r\n    /**\r\n     * @dev Moves `amount` tokens from the caller's account to `recipient`.\r\n     *\r\n     * Returns a boolean value indicating whether the operation succeeded.\r\n     *\r\n     * Emits a {Transfer} event.\r\n     */\r\n    function transfer(address recipient, uint256 amount)\r\n        external\r\n        returns (bool);\r\n\r\n    /**\r\n     * @dev Returns the remaining number of tokens that `spender` will be\r\n     * allowed to spend on behalf of `owner` through {transferFrom}. This is\r\n     * zero by default.\r\n     *\r\n     * This value changes when {approve} or {transferFrom} are called.\r\n     */\r\n    function allowance(address owner, address spender)\r\n        external\r\n        view\r\n        returns (uint256);\r\n\r\n    /**\r\n     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.\r\n     *\r\n     * Returns a boolean value indicating whether the operation succeeded.\r\n     *\r\n     * IMPORTANT: Beware that changing an allowance with this method brings the risk\r\n     * that someone may use both the old and the new allowance by unfortunate\r\n     * transaction ordering. One possible solution to mitigate this race\r\n     * condition is to first reduce the spender's allowance to 0 and set the\r\n     * desired value afterwards:\r\n     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729\r\n     *\r\n     * Emits an {Approval} event.\r\n     */\r\n    function approve(address spender, uint256 amount) external returns (bool);\r\n\r\n    /**\r\n     * @dev Moves `amount` tokens from `sender` to `recipient` using the\r\n     * allowance mechanism. `amount` is then deducted from the caller's\r\n     * allowance.\r\n     *\r\n     * Returns a boolean value indicating whether the operation succeeded.\r\n     *\r\n     * Emits a {Transfer} event.\r\n     */\r\n    function transferFrom(\r\n        address sender,\r\n        address recipient,\r\n        uint256 amount\r\n    ) external returns (bool);\r\n\r\n    /**\r\n     * @dev Emitted when `value` tokens are moved from one account (`from`) to\r\n     * another (`to`).\r\n     *\r\n     * Note that `value` may be zero.\r\n     */\r\n    event Transfer(address indexed from, address indexed to, uint256 value);\r\n\r\n    /**\r\n     * @dev Emitted when the allowance of a `spender` for an `owner` is set by\r\n     * a call to {approve}. `value` is the new allowance.\r\n     */\r\n    event Approval(\r\n        address indexed owner,\r\n        address indexed spender,\r\n        uint256 value\r\n    );\r\n}\r\n\r\n/**\r\n * @dev Provides information about the current execution context, including the\r\n * sender of the transaction and its data. While these are generally available\r\n * via msg.sender and msg.data, they should not be accessed in such a direct\r\n * manner, since when dealing with meta-transactions the account sending and\r\n * paying for execution may not be the actual sender (as far as an application\r\n * is concerned).\r\n *\r\n * This contract is only required for intermediate, library-like contracts.\r\n */\r\nabstract contract Context {\r\n    function _msgSender() internal view virtual returns (address) {\r\n        return msg.sender;\r\n    }\r\n\r\n    function _msgData() internal view virtual returns (bytes calldata) {\r\n        return msg.data;\r\n    }\r\n}\r\n\r\n/**\r\n * @dev Contract module which provides a basic access control mechanism, where\r\n * there is an account (an owner) that can be granted exclusive access to\r\n * specific functions.\r\n *\r\n * By default, the owner account will be the one that deploys the contract. This\r\n * can later be changed with {transferOwnership}.\r\n *\r\n * This module is used through inheritance. It will make available the modifier\r\n * `onlyOwner`, which can be applied to your functions to restrict their use to\r\n * the owner.\r\n */\r\nabstract contract Ownable is Context {\r\n    address private _owner;\r\n\r\n    event OwnershipTransferred(\r\n        address indexed previousOwner,\r\n        address indexed newOwner\r\n    );\r\n\r\n    /**\r\n     * @dev Initializes the contract setting the deployer as the initial owner.\r\n     */\r\n    constructor() {\r\n        _setOwner(_msgSender());\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the address of the current owner.\r\n     */\r\n    function owner() public view virtual returns (address) {\r\n        return _owner;\r\n    }\r\n\r\n    /**\r\n     * @dev Throws if called by any account other than the owner.\r\n     */\r\n    modifier onlyOwner() {\r\n        require(owner() == _msgSender(), \"Ownable: caller is not the owner\");\r\n        _;\r\n    }\r\n\r\n    /**\r\n     * @dev Leaves the contract without owner. It will not be possible to call\r\n     * `onlyOwner` functions anymore. Can only be called by the current owner.\r\n     *\r\n     * NOTE: Renouncing ownership will leave the contract without an owner,\r\n     * thereby removing any functionality that is only available to the owner.\r\n     */\r\n    function renounceOwnership() public virtual onlyOwner {\r\n        _setOwner(address(0));\r\n    }\r\n\r\n    /**\r\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\r\n     * Can only be called by the current owner.\r\n     */\r\n    function transferOwnership(address newOwner) public virtual onlyOwner {\r\n        require(\r\n            newOwner != address(0),\r\n            \"Ownable: new owner is the zero address\"\r\n        );\r\n        _setOwner(newOwner);\r\n    }\r\n\r\n    function _setOwner(address newOwner) private {\r\n        address oldOwner = _owner;\r\n        _owner = newOwner;\r\n        emit OwnershipTransferred(oldOwner, newOwner);\r\n    }\r\n}\r\n\r\n/**\r\n * @title A simple holder of tokens.\r\n * This is a simple contract to hold tokens. It's useful in the case where a separate contract\r\n * needs to hold multiple distinct pools of the same token.\r\n */\r\ncontract TokenPool is Ownable {\r\n    IERC20 public token;\r\n\r\n    constructor(IERC20 _token) {\r\n        token = _token;\r\n    }\r\n\r\n    function balance() external view returns (uint256) {\r\n        return token.balanceOf(address(this));\r\n    }\r\n\r\n    function transfer(address to, uint256 value)\r\n        external\r\n        onlyOwner\r\n        returns (bool)\r\n    {\r\n        return token.transfer(to, value);\r\n    }\r\n}\r\n\r\n/**\r\n * @dev Contract module that helps prevent reentrant calls to a function.\r\n *\r\n * Inheriting from `ReentrancyGuard` will make the {nonReentrant} modifier\r\n * available, which can be applied to functions to make sure there are no nested\r\n * (reentrant) calls to them.\r\n *\r\n * Note that because there is a single `nonReentrant` guard, functions marked as\r\n * `nonReentrant` may not call one another. This can be worked around by making\r\n * those functions `private`, and then adding `external` `nonReentrant` entry\r\n * points to them.\r\n *\r\n * TIP: If you would like to learn more about reentrancy and alternative ways\r\n * to protect against it, check out our blog post\r\n * https://blog.openzeppelin.com/reentrancy-after-istanbul/[Reentrancy After Istanbul].\r\n */\r\nabstract contract ReentrancyGuard {\r\n    // Booleans are more expensive than uint256 or any type that takes up a full\r\n    // word because each write operation emits an extra SLOAD to first read the\r\n    // slot's contents, replace the bits taken up by the boolean, and then write\r\n    // back. This is the compiler's defense against contract upgrades and\r\n    // pointer aliasing, and it cannot be disabled.\r\n\r\n    // The values being non-zero value makes deployment a bit more expensive,\r\n    // but in exchange the refund on every call to nonReentrant will be lower in\r\n    // amount. Since refunds are capped to a percentage of the total\r\n    // transaction's gas, it is best to keep them low in cases like this one, to\r\n    // increase the likelihood of the full refund coming into effect.\r\n    uint256 private constant _NOT_ENTERED = 1;\r\n    uint256 private constant _ENTERED = 2;\r\n\r\n    uint256 private _status;\r\n\r\n    constructor() {\r\n        _status = _NOT_ENTERED;\r\n    }\r\n\r\n    /**\r\n     * @dev Prevents a contract from calling itself, directly or indirectly.\r\n     * Calling a `nonReentrant` function from another `nonReentrant`\r\n     * function is not supported. It is possible to prevent this from happening\r\n     * by making the `nonReentrant` function external, and make it call a\r\n     * `private` function that does the actual work.\r\n     */\r\n    modifier nonReentrant() {\r\n        // On the first call to nonReentrant, _notEntered will be true\r\n        require(_status != _ENTERED, \"ReentrancyGuard: reentrant call\");\r\n\r\n        // Any calls to nonReentrant after this point will fail\r\n        _status = _ENTERED;\r\n\r\n        _;\r\n\r\n        // By storing the original value once again, a refund is triggered (see\r\n        // https://eips.ethereum.org/EIPS/eip-2200)\r\n        _status = _NOT_ENTERED;\r\n    }\r\n}\r\n\r\n/**\r\n * @dev External interface of AccessControl declared to support ERC165 detection.\r\n */\r\ninterface IAccessControl {\r\n    /**\r\n     * @dev Emitted when `newAdminRole` is set as ``role``'s admin role, replacing `previousAdminRole`\r\n     *\r\n     * `DEFAULT_ADMIN_ROLE` is the starting admin for all roles, despite\r\n     * {RoleAdminChanged} not being emitted signaling this.\r\n     *\r\n     * _Available since v3.1._\r\n     */\r\n    event RoleAdminChanged(\r\n        bytes32 indexed role,\r\n        bytes32 indexed previousAdminRole,\r\n        bytes32 indexed newAdminRole\r\n    );\r\n\r\n    /**\r\n     * @dev Emitted when `account` is granted `role`.\r\n     *\r\n     * `sender` is the account that originated the contract call, an admin role\r\n     * bearer except when using {AccessControl-_setupRole}.\r\n     */\r\n    event RoleGranted(\r\n        bytes32 indexed role,\r\n        address indexed account,\r\n        address indexed sender\r\n    );\r\n\r\n    /**\r\n     * @dev Emitted when `account` is revoked `role`.\r\n     *\r\n     * `sender` is the account that originated the contract call:\r\n     *   - if using `revokeRole`, it is the admin role bearer\r\n     *   - if using `renounceRole`, it is the role bearer (i.e. `account`)\r\n     */\r\n    event RoleRevoked(\r\n        bytes32 indexed role,\r\n        address indexed account,\r\n        address indexed sender\r\n    );\r\n\r\n    /**\r\n     * @dev Returns `true` if `account` has been granted `role`.\r\n     */\r\n    function hasRole(bytes32 role, address account)\r\n        external\r\n        view\r\n        returns (bool);\r\n\r\n    /**\r\n     * @dev Returns the admin role that controls `role`. See {grantRole} and\r\n     * {revokeRole}.\r\n     *\r\n     * To change a role's admin, use {AccessControl-_setRoleAdmin}.\r\n     */\r\n    function getRoleAdmin(bytes32 role) external view returns (bytes32);\r\n\r\n    /**\r\n     * @dev Grants `role` to `account`.\r\n     *\r\n     * If `account` had not been already granted `role`, emits a {RoleGranted}\r\n     * event.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - the caller must have ``role``'s admin role.\r\n     */\r\n    function grantRole(bytes32 role, address account) external;\r\n\r\n    /**\r\n     * @dev Revokes `role` from `account`.\r\n     *\r\n     * If `account` had been granted `role`, emits a {RoleRevoked} event.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - the caller must have ``role``'s admin role.\r\n     */\r\n    function revokeRole(bytes32 role, address account) external;\r\n\r\n    /**\r\n     * @dev Revokes `role` from the calling account.\r\n     *\r\n     * Roles are often managed via {grantRole} and {revokeRole}: this function's\r\n     * purpose is to provide a mechanism for accounts to lose their privileges\r\n     * if they are compromised (such as when a trusted device is misplaced).\r\n     *\r\n     * If the calling account had been granted `role`, emits a {RoleRevoked}\r\n     * event.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - the caller must be `account`.\r\n     */\r\n    function renounceRole(bytes32 role, address account) external;\r\n}\r\n\r\n/**\r\n * @dev String operations.\r\n */\r\nlibrary Strings {\r\n    bytes16 private constant _HEX_SYMBOLS = \"0123456789abcdef\";\r\n\r\n    /**\r\n     * @dev Converts a `uint256` to its ASCII `string` decimal representation.\r\n     */\r\n    function toString(uint256 value) internal pure returns (string memory) {\r\n        // Inspired by OraclizeAPI's implementation - MIT licence\r\n        // https://github.com/oraclize/ethereum-api/blob/b42146b063c7d6ee1358846c198246239e9360e8/oraclizeAPI_0.4.25.sol\r\n\r\n        if (value == 0) {\r\n            return \"0\";\r\n        }\r\n        uint256 temp = value;\r\n        uint256 digits;\r\n        while (temp != 0) {\r\n            digits++;\r\n            temp /= 10;\r\n        }\r\n        bytes memory buffer = new bytes(digits);\r\n        while (value != 0) {\r\n            digits -= 1;\r\n            buffer[digits] = bytes1(uint8(48 + uint256(value % 10)));\r\n            value /= 10;\r\n        }\r\n        return string(buffer);\r\n    }\r\n\r\n    /**\r\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation.\r\n     */\r\n    function toHexString(uint256 value) internal pure returns (string memory) {\r\n        if (value == 0) {\r\n            return \"0x00\";\r\n        }\r\n        uint256 temp = value;\r\n        uint256 length = 0;\r\n        while (temp != 0) {\r\n            length++;\r\n            temp >>= 8;\r\n        }\r\n        return toHexString(value, length);\r\n    }\r\n\r\n    /**\r\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation with fixed length.\r\n     */\r\n    function toHexString(uint256 value, uint256 length)\r\n        internal\r\n        pure\r\n        returns (string memory)\r\n    {\r\n        bytes memory buffer = new bytes(2 * length + 2);\r\n        buffer[0] = \"0\";\r\n        buffer[1] = \"x\";\r\n        for (uint256 i = 2 * length + 1; i > 1; --i) {\r\n            buffer[i] = _HEX_SYMBOLS[value & 0xf];\r\n            value >>= 4;\r\n        }\r\n        require(value == 0, \"Strings: hex length insufficient\");\r\n        return string(buffer);\r\n    }\r\n}\r\n\r\n/**\r\n * @dev Implementation of the {IERC165} interface.\r\n *\r\n * Contracts that want to implement ERC165 should inherit from this contract and override {supportsInterface} to check\r\n * for the additional interface id that will be supported. For example:\r\n *\r\n * ```solidity\r\n * function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {\r\n *     return interfaceId == type(MyInterface).interfaceId || super.supportsInterface(interfaceId);\r\n * }\r\n * ```\r\n *\r\n * Alternatively, {ERC165Storage} provides an easier to use but more expensive implementation.\r\n */\r\nabstract contract ERC165 is IERC165 {\r\n    /**\r\n     * @dev See {IERC165-supportsInterface}.\r\n     */\r\n    function supportsInterface(bytes4 interfaceId)\r\n        public\r\n        view\r\n        virtual\r\n        override\r\n        returns (bool)\r\n    {\r\n        return interfaceId == type(IERC165).interfaceId;\r\n    }\r\n}\r\n\r\n/**\r\n * @dev Contract module that allows children to implement role-based access\r\n * control mechanisms. This is a lightweight version that doesn't allow enumerating role\r\n * members except through off-chain means by accessing the contract event logs. Some\r\n * applications may benefit from on-chain enumerability, for those cases see\r\n * {AccessControlEnumerable}.\r\n *\r\n * Roles are referred to by their `bytes32` identifier. These should be exposed\r\n * in the external API and be unique. The best way to achieve this is by\r\n * using `public constant` hash digests:\r\n *\r\n * ```\r\n * bytes32 public constant MY_ROLE = keccak256(\"MY_ROLE\");\r\n * ```\r\n *\r\n * Roles can be used to represent a set of permissions. To restrict access to a\r\n * function call, use {hasRole}:\r\n *\r\n * ```\r\n * function foo() public {\r\n *     require(hasRole(MY_ROLE, msg.sender));\r\n *     ...\r\n * }\r\n * ```\r\n *\r\n * Roles can be granted and revoked dynamically via the {grantRole} and\r\n * {revokeRole} functions. Each role has an associated admin role, and only\r\n * accounts that have a role's admin role can call {grantRole} and {revokeRole}.\r\n *\r\n * By default, the admin role for all roles is `DEFAULT_ADMIN_ROLE`, which means\r\n * that only accounts with this role will be able to grant or revoke other\r\n * roles. More complex role relationships can be created by using\r\n * {_setRoleAdmin}.\r\n *\r\n * WARNING: The `DEFAULT_ADMIN_ROLE` is also its own admin: it has permission to\r\n * grant and revoke this role. Extra precautions should be taken to secure\r\n * accounts that have been granted it.\r\n */\r\nabstract contract AccessControl is Context, IAccessControl, ERC165 {\r\n    struct RoleData {\r\n        mapping(address => bool) members;\r\n        bytes32 adminRole;\r\n    }\r\n\r\n    mapping(bytes32 => RoleData) private _roles;\r\n\r\n    bytes32 public constant DEFAULT_ADMIN_ROLE = 0x00;\r\n\r\n    /**\r\n     * @dev Modifier that checks that an account has a specific role. Reverts\r\n     * with a standardized message including the required role.\r\n     *\r\n     * The format of the revert reason is given by the following regular expression:\r\n     *\r\n     *  /^AccessControl: account (0x[0-9a-f]{40}) is missing role (0x[0-9a-f]{64})$/\r\n     *\r\n     * _Available since v4.1._\r\n     */\r\n    modifier onlyRole(bytes32 role) {\r\n        _checkRole(role, _msgSender());\r\n        _;\r\n    }\r\n\r\n    /**\r\n     * @dev See {IERC165-supportsInterface}.\r\n     */\r\n    function supportsInterface(bytes4 interfaceId)\r\n        public\r\n        view\r\n        virtual\r\n        override\r\n        returns (bool)\r\n    {\r\n        return\r\n            interfaceId == type(IAccessControl).interfaceId ||\r\n            super.supportsInterface(interfaceId);\r\n    }\r\n\r\n    /**\r\n     * @dev Returns `true` if `account` has been granted `role`.\r\n     */\r\n    function hasRole(bytes32 role, address account)\r\n        public\r\n        view\r\n        override\r\n        returns (bool)\r\n    {\r\n        return _roles[role].members[account];\r\n    }\r\n\r\n    /**\r\n     * @dev Revert with a standard message if `account` is missing `role`.\r\n     *\r\n     * The format of the revert reason is given by the following regular expression:\r\n     *\r\n     *  /^AccessControl: account (0x[0-9a-f]{40}) is missing role (0x[0-9a-f]{64})$/\r\n     */\r\n    function _checkRole(bytes32 role, address account) internal view {\r\n        if (!hasRole(role, account)) {\r\n            revert(\r\n                string(\r\n                    abi.encodePacked(\r\n                        \"AccessControl: account \",\r\n                        Strings.toHexString(uint160(account), 20),\r\n                        \" is missing role \",\r\n                        Strings.toHexString(uint256(role), 32)\r\n                    )\r\n                )\r\n            );\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the admin role that controls `role`. See {grantRole} and\r\n     * {revokeRole}.\r\n     *\r\n     * To change a role's admin, use {_setRoleAdmin}.\r\n     */\r\n    function getRoleAdmin(bytes32 role) public view override returns (bytes32) {\r\n        return _roles[role].adminRole;\r\n    }\r\n\r\n    /**\r\n     * @dev Grants `role` to `account`.\r\n     *\r\n     * If `account` had not been already granted `role`, emits a {RoleGranted}\r\n     * event.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - the caller must have ``role``'s admin role.\r\n     */\r\n    function grantRole(bytes32 role, address account)\r\n        public\r\n        virtual\r\n        override\r\n        onlyRole(getRoleAdmin(role))\r\n    {\r\n        _grantRole(role, account);\r\n    }\r\n\r\n    /**\r\n     * @dev Revokes `role` from `account`.\r\n     *\r\n     * If `account` had been granted `role`, emits a {RoleRevoked} event.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - the caller must have ``role``'s admin role.\r\n     */\r\n    function revokeRole(bytes32 role, address account)\r\n        public\r\n        virtual\r\n        override\r\n        onlyRole(getRoleAdmin(role))\r\n    {\r\n        _revokeRole(role, account);\r\n    }\r\n\r\n    /**\r\n     * @dev Revokes `role` from the calling account.\r\n     *\r\n     * Roles are often managed via {grantRole} and {revokeRole}: this function's\r\n     * purpose is to provide a mechanism for accounts to lose their privileges\r\n     * if they are compromised (such as when a trusted device is misplaced).\r\n     *\r\n     * If the calling account had been granted `role`, emits a {RoleRevoked}\r\n     * event.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - the caller must be `account`.\r\n     */\r\n    function renounceRole(bytes32 role, address account)\r\n        public\r\n        virtual\r\n        override\r\n    {\r\n        require(\r\n            account == _msgSender(),\r\n            \"AccessControl: can only renounce roles for self\"\r\n        );\r\n\r\n        _revokeRole(role, account);\r\n    }\r\n\r\n    /**\r\n     * @dev Grants `role` to `account`.\r\n     *\r\n     * If `account` had not been already granted `role`, emits a {RoleGranted}\r\n     * event. Note that unlike {grantRole}, this function doesn't perform any\r\n     * checks on the calling account.\r\n     *\r\n     * [WARNING]\r\n     * ====\r\n     * This function should only be called from the constructor when setting\r\n     * up the initial roles for the system.\r\n     *\r\n     * Using this function in any other way is effectively circumventing the admin\r\n     * system imposed by {AccessControl}.\r\n     * ====\r\n     */\r\n    function _setupRole(bytes32 role, address account) internal virtual {\r\n        _grantRole(role, account);\r\n    }\r\n\r\n    /**\r\n     * @dev Sets `adminRole` as ``role``'s admin role.\r\n     *\r\n     * Emits a {RoleAdminChanged} event.\r\n     */\r\n    function _setRoleAdmin(bytes32 role, bytes32 adminRole) internal virtual {\r\n        bytes32 previousAdminRole = getRoleAdmin(role);\r\n        _roles[role].adminRole = adminRole;\r\n        emit RoleAdminChanged(role, previousAdminRole, adminRole);\r\n    }\r\n\r\n    function _grantRole(bytes32 role, address account) private {\r\n        if (!hasRole(role, account)) {\r\n            _roles[role].members[account] = true;\r\n            emit RoleGranted(role, account, _msgSender());\r\n        }\r\n    }\r\n\r\n    function _revokeRole(bytes32 role, address account) private {\r\n        if (hasRole(role, account)) {\r\n            _roles[role].members[account] = false;\r\n            emit RoleRevoked(role, account, _msgSender());\r\n        }\r\n    }\r\n}\r\n\r\n/**\r\n * @dev Wrappers over Solidity's arithmetic operations.\r\n *\r\n * NOTE: `SafeMath` is no longer needed starting with Solidity 0.8. The compiler\r\n * now has built in overflow checking.\r\n */\r\nlibrary SafeMath {\r\n    /**\r\n     * @dev Returns the addition of two unsigned integers, with an overflow flag.\r\n     *\r\n     * _Available since v3.4._\r\n     */\r\n    function tryAdd(uint256 a, uint256 b)\r\n        internal\r\n        pure\r\n        returns (bool, uint256)\r\n    {\r\n        unchecked {\r\n            uint256 c = a + b;\r\n            if (c < a) return (false, 0);\r\n            return (true, c);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the substraction of two unsigned integers, with an overflow flag.\r\n     *\r\n     * _Available since v3.4._\r\n     */\r\n    function trySub(uint256 a, uint256 b)\r\n        internal\r\n        pure\r\n        returns (bool, uint256)\r\n    {\r\n        unchecked {\r\n            if (b > a) return (false, 0);\r\n            return (true, a - b);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the multiplication of two unsigned integers, with an overflow flag.\r\n     *\r\n     * _Available since v3.4._\r\n     */\r\n    function tryMul(uint256 a, uint256 b)\r\n        internal\r\n        pure\r\n        returns (bool, uint256)\r\n    {\r\n        unchecked {\r\n            // Gas optimization: this is cheaper than requiring 'a' not being zero, but the\r\n            // benefit is lost if 'b' is also tested.\r\n            // See: https://github.com/OpenZeppelin/openzeppelin-contracts/pull/522\r\n            if (a == 0) return (true, 0);\r\n            uint256 c = a * b;\r\n            if (c / a != b) return (false, 0);\r\n            return (true, c);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the division of two unsigned integers, with a division by zero flag.\r\n     *\r\n     * _Available since v3.4._\r\n     */\r\n    function tryDiv(uint256 a, uint256 b)\r\n        internal\r\n        pure\r\n        returns (bool, uint256)\r\n    {\r\n        unchecked {\r\n            if (b == 0) return (false, 0);\r\n            return (true, a / b);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the remainder of dividing two unsigned integers, with a division by zero flag.\r\n     *\r\n     * _Available since v3.4._\r\n     */\r\n    function tryMod(uint256 a, uint256 b)\r\n        internal\r\n        pure\r\n        returns (bool, uint256)\r\n    {\r\n        unchecked {\r\n            if (b == 0) return (false, 0);\r\n            return (true, a % b);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the addition of two unsigned integers, reverting on\r\n     * overflow.\r\n     *\r\n     * Counterpart to Solidity's `+` operator.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - Addition cannot overflow.\r\n     */\r\n    function add(uint256 a, uint256 b) internal pure returns (uint256) {\r\n        return a + b;\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the subtraction of two unsigned integers, reverting on\r\n     * overflow (when the result is negative).\r\n     *\r\n     * Counterpart to Solidity's `-` operator.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - Subtraction cannot overflow.\r\n     */\r\n    function sub(uint256 a, uint256 b) internal pure returns (uint256) {\r\n        return a - b;\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the multiplication of two unsigned integers, reverting on\r\n     * overflow.\r\n     *\r\n     * Counterpart to Solidity's `*` operator.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - Multiplication cannot overflow.\r\n     */\r\n    function mul(uint256 a, uint256 b) internal pure returns (uint256) {\r\n        return a * b;\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the integer division of two unsigned integers, reverting on\r\n     * division by zero. The result is rounded towards zero.\r\n     *\r\n     * Counterpart to Solidity's `/` operator.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - The divisor cannot be zero.\r\n     */\r\n    function div(uint256 a, uint256 b) internal pure returns (uint256) {\r\n        return a / b;\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),\r\n     * reverting when dividing by zero.\r\n     *\r\n     * Counterpart to Solidity's `%` operator. This function uses a `revert`\r\n     * opcode (which leaves remaining gas untouched) while Solidity uses an\r\n     * invalid opcode to revert (consuming all remaining gas).\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - The divisor cannot be zero.\r\n     */\r\n    function mod(uint256 a, uint256 b) internal pure returns (uint256) {\r\n        return a % b;\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the subtraction of two unsigned integers, reverting with custom message on\r\n     * overflow (when the result is negative).\r\n     *\r\n     * CAUTION: This function is deprecated because it requires allocating memory for the error\r\n     * message unnecessarily. For custom revert reasons use {trySub}.\r\n     *\r\n     * Counterpart to Solidity's `-` operator.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - Subtraction cannot overflow.\r\n     */\r\n    function sub(\r\n        uint256 a,\r\n        uint256 b,\r\n        string memory errorMessage\r\n    ) internal pure returns (uint256) {\r\n        unchecked {\r\n            require(b <= a, errorMessage);\r\n            return a - b;\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the integer division of two unsigned integers, reverting with custom message on\r\n     * division by zero. The result is rounded towards zero.\r\n     *\r\n     * Counterpart to Solidity's `/` operator. Note: this function uses a\r\n     * `revert` opcode (which leaves remaining gas untouched) while Solidity\r\n     * uses an invalid opcode to revert (consuming all remaining gas).\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - The divisor cannot be zero.\r\n     */\r\n    function div(\r\n        uint256 a,\r\n        uint256 b,\r\n        string memory errorMessage\r\n    ) internal pure returns (uint256) {\r\n        unchecked {\r\n            require(b > 0, errorMessage);\r\n            return a / b;\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),\r\n     * reverting with custom message when dividing by zero.\r\n     *\r\n     * CAUTION: This function is deprecated because it requires allocating memory for the error\r\n     * message unnecessarily. For custom revert reasons use {tryMod}.\r\n     *\r\n     * Counterpart to Solidity's `%` operator. This function uses a `revert`\r\n     * opcode (which leaves remaining gas untouched) while Solidity uses an\r\n     * invalid opcode to revert (consuming all remaining gas).\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - The divisor cannot be zero.\r\n     */\r\n    function mod(\r\n        uint256 a,\r\n        uint256 b,\r\n        string memory errorMessage\r\n    ) internal pure returns (uint256) {\r\n        unchecked {\r\n            require(b > 0, errorMessage);\r\n            return a % b;\r\n        }\r\n    }\r\n}\r\n\r\ncontract TrodlStake is ReentrancyGuard, AccessControl {\r\n    using SafeMath for uint256;\r\n\r\n    event Staked(address indexed user, uint256 amount, uint256 total);\r\n    event Unstaked(address indexed user, uint256 amount, uint256 total);\r\n    event Withdraw(address indexed user, uint256 amount, uint256 total);\r\n    event ReStake(address indexed user, uint256 amount, uint256 total);\r\n    event RewardUsed(address indexed user, uint256 amount);\r\n\r\n    bytes32 REWARD_USER = keccak256(bytes(\"REWARD_USER\"));\r\n    uint256 public _apy; // annual percentage yield\r\n    uint256 public _lockupPeriod; // Lock Up period in days\r\n\r\n    TokenPool private _troStakingPool;\r\n\r\n    struct UserRewardInfo {\r\n        uint256 stakedAmount;\r\n        uint256 unstakedAmount;\r\n        uint256 rewardMinted;\r\n        uint256 rewardUsed;\r\n        uint256 lastAccountingTimestampSec;\r\n    }\r\n\r\n    mapping(address => UserRewardInfo) private _userRewards;\r\n\r\n    address[] private _stakers;\r\n\r\n    constructor(\r\n        IERC20 token,\r\n        uint256 apy,\r\n        uint256 lockupPeriod\r\n    ) {\r\n        _apy = apy;\r\n        _lockupPeriod = lockupPeriod;\r\n        _troStakingPool = new TokenPool(token);\r\n        _setupRole(DEFAULT_ADMIN_ROLE, msg.sender); // To grant IDO to REWARD_USER role later on\r\n    }\r\n\r\n    function stake(uint256 amount) public nonReentrant {\r\n        require(amount > 0, \"TrodlStake: stake amount ZERO\");\r\n\r\n        UserRewardInfo memory userRewardInfo = _userRewards[msg.sender];\r\n\r\n        // uint256 actualTransferAmount = _getTransactionAmount(amount);\r\n\r\n        bool mathStatus;\r\n\r\n        if (userRewardInfo.lastAccountingTimestampSec == 0) {\r\n            _stakers.push(msg.sender);\r\n        }\r\n        if (userRewardInfo.lastAccountingTimestampSec != 0) {\r\n            //calculate applicable rewards so far and add it\r\n            uint256 rewardsUntilNow = calculateReward(userRewardInfo);\r\n\r\n            (mathStatus, userRewardInfo.rewardMinted) = userRewardInfo\r\n                .rewardMinted\r\n                .tryAdd(rewardsUntilNow);\r\n            require(mathStatus == true, \"TrodlStake: Math Error\");\r\n        }\r\n\r\n        (mathStatus, userRewardInfo.stakedAmount) = userRewardInfo\r\n            .stakedAmount\r\n            .tryAdd(amount);\r\n        require(mathStatus == true, \"TrodlStake: Math Error\");\r\n\r\n        userRewardInfo.lastAccountingTimestampSec = block.timestamp;\r\n        _userRewards[msg.sender] = userRewardInfo;\r\n\r\n        try\r\n            _troStakingPool.token().transferFrom(\r\n                msg.sender,\r\n                address(_troStakingPool),\r\n                amount\r\n            )\r\n        returns (bool) {\r\n            emit Staked(msg.sender, amount, userRewardInfo.stakedAmount);\r\n        } catch Error(string memory) {\r\n            revert(\"TrodlStake: Failed transfer to staking pool\");\r\n        } catch (bytes memory) {\r\n            // This is executed in case revert() was used.\r\n            revert(\"TrodlStake: Failed transfer to staking pool\");\r\n        }\r\n    }\r\n\r\n    function unstakeAll() public {\r\n        unstake(_userRewards[msg.sender].stakedAmount);\r\n    }\r\n\r\n    function unstake(uint256 amount) public nonReentrant {\r\n        require(amount > 0, \"TrodlStake: Require Non Zero Value\");\r\n\r\n        UserRewardInfo storage userRewardInfo = _userRewards[msg.sender];\r\n        // require(userRewardInfo.stakedAmount > 0, \"TrodlStake: No Staked TRO\");\r\n        require(\r\n            amount <= userRewardInfo.stakedAmount,\r\n            \"TrodlStake: Not enough Staked TRO\"\r\n        );\r\n\r\n        bool mathStatus;\r\n        uint256 rewardsUntilNow = calculateReward(userRewardInfo);\r\n\r\n        (mathStatus, userRewardInfo.rewardMinted) = userRewardInfo\r\n            .rewardMinted\r\n            .tryAdd(rewardsUntilNow);\r\n        require(mathStatus == true, \"TrodlStake: Math Error\");\r\n\r\n        (mathStatus, userRewardInfo.stakedAmount) = userRewardInfo\r\n            .stakedAmount\r\n            .trySub(amount);\r\n        require(mathStatus == true, \"TrodlStake: Math Error\");\r\n\r\n        (mathStatus, userRewardInfo.unstakedAmount) = userRewardInfo\r\n            .unstakedAmount\r\n            .tryAdd(amount);\r\n        require(mathStatus == true, \"TrodlStake: Math Error\");\r\n\r\n        userRewardInfo.lastAccountingTimestampSec = block.timestamp;\r\n\r\n        emit Unstaked(msg.sender, amount, userRewardInfo.stakedAmount);\r\n    }\r\n\r\n    function withdrawAllTRO() public {\r\n        return withdrawTRO(_userRewards[msg.sender].unstakedAmount);\r\n    }\r\n\r\n    function withdrawTRO(uint256 amount) public nonReentrant {\r\n        require(amount > 0, \"TrodlStake: Require Non Zero Value\");\r\n\r\n        UserRewardInfo storage userRewardInfo = _userRewards[msg.sender];\r\n\r\n        require(\r\n            amount <= userRewardInfo.unstakedAmount,\r\n            \"TrodlStake: Not enough Un-Staked TRO\"\r\n        );\r\n\r\n        require(\r\n            block.timestamp >=\r\n                (userRewardInfo.lastAccountingTimestampSec +\r\n                    (_lockupPeriod * 1 days)),\r\n            \"TrodlStake: Withdraw in LockPeriod\"\r\n        );\r\n\r\n        bool mathStatus;\r\n        if (userRewardInfo.stakedAmount > 0) {\r\n            uint256 rewardsUntilNow = calculateReward(userRewardInfo);\r\n\r\n            (mathStatus, userRewardInfo.rewardMinted) = userRewardInfo\r\n                .rewardMinted\r\n                .tryAdd(rewardsUntilNow);\r\n            require(mathStatus == true, \"TrodlStake: Math Error\");\r\n        }\r\n\r\n        (mathStatus, userRewardInfo.unstakedAmount) = userRewardInfo\r\n            .unstakedAmount\r\n            .trySub(amount);\r\n        require(mathStatus == true, \"TrodlStake: Math Error\");\r\n\r\n        userRewardInfo.lastAccountingTimestampSec = block.timestamp;\r\n\r\n        try _troStakingPool.transfer(msg.sender, amount) returns (bool) {\r\n            // uint256 actualTransferAmount = _getTransactionAmount(amount);\r\n            emit Withdraw(msg.sender, amount, userRewardInfo.stakedAmount);\r\n        } catch Error(string memory) {\r\n            revert(\"TrodlStake: Transfer Error from Pool\");\r\n        } catch (bytes memory) {\r\n            revert(\"TrodlStake: Transfer Error from Pool\");\r\n        }\r\n    }\r\n\r\n    function reStake() public nonReentrant {\r\n        UserRewardInfo storage userRewardInfo = _userRewards[msg.sender];\r\n\r\n        uint256 restakeAmount = userRewardInfo.unstakedAmount;\r\n\r\n        bool mathStatus;\r\n\r\n        //calculate applicable rewards so far and add it\r\n        if (userRewardInfo.stakedAmount > 0) {\r\n            uint256 rewardsUntilNow = calculateReward(userRewardInfo);\r\n\r\n            (mathStatus, userRewardInfo.rewardMinted) = userRewardInfo\r\n                .rewardMinted\r\n                .tryAdd(rewardsUntilNow);\r\n            require(mathStatus == true, \"TrodlStake: Math Error\");\r\n        }\r\n\r\n        (mathStatus, userRewardInfo.stakedAmount) = userRewardInfo\r\n            .stakedAmount\r\n            .tryAdd(userRewardInfo.unstakedAmount);\r\n        require(mathStatus == true, \"TrodlStake: Math Error\");\r\n\r\n        userRewardInfo.unstakedAmount = 0;\r\n        userRewardInfo.lastAccountingTimestampSec = block.timestamp;\r\n\r\n        emit ReStake(msg.sender, restakeAmount, userRewardInfo.stakedAmount);\r\n        restakeAmount = 0;\r\n    }\r\n\r\n    function usexTRO(uint256 amount, address user) public {\r\n        require(\r\n            hasRole(REWARD_USER, msg.sender),\r\n            \"TrodlStake: Address cannot use rewards\"\r\n        );\r\n\r\n        UserRewardInfo storage userRewardInfo = _userRewards[user];\r\n\r\n        bool mathStatus;\r\n        if (userRewardInfo.stakedAmount > 0) {\r\n            //calculate applicable rewards so far and add it\r\n            uint256 rewardsUntilNow = calculateReward(userRewardInfo);\r\n\r\n            (mathStatus, userRewardInfo.rewardMinted) = userRewardInfo\r\n                .rewardMinted\r\n                .tryAdd(rewardsUntilNow);\r\n\r\n            require(mathStatus == true, \"TrodlStake: Math Error\");\r\n        }\r\n\r\n        uint256 usableRewards;\r\n        (mathStatus, usableRewards) = userRewardInfo.rewardMinted.trySub(\r\n            userRewardInfo.rewardUsed\r\n        );\r\n\r\n        require(amount <= usableRewards, \"TrodlStake: Insufficient Rewards\");\r\n\r\n        (mathStatus, userRewardInfo.rewardUsed) = userRewardInfo\r\n            .rewardUsed\r\n            .tryAdd(amount);\r\n\r\n        userRewardInfo.lastAccountingTimestampSec = block.timestamp;\r\n\r\n        emit RewardUsed(msg.sender, amount);\r\n    }\r\n\r\n    function grantRewardUserRole(address rewardUser) public {\r\n        grantRole(REWARD_USER, rewardUser);\r\n    }\r\n\r\n    function revokeRewardUserRole(address rewardUser) public {\r\n        revokeRole(REWARD_USER, rewardUser);\r\n    }\r\n\r\n    // function _getTransactionAmount(uint256 amount)\r\n    //     private\r\n    //     pure\r\n    //     returns (uint256)\r\n    // {\r\n    //     uint256 tokFeeHalf = amount.div(200);\r\n    //     uint256 tFee = tokFeeHalf.mul(2);\r\n    //     uint256 tokTransferAmount = amount.sub(tFee);\r\n    //     return tokTransferAmount;\r\n    // }\r\n\r\n    function calculateReward(UserRewardInfo memory userRewardInfo)\r\n        private\r\n        view\r\n        returns (uint256)\r\n    {\r\n        uint256 currentRewards = userRewardInfo.stakedAmount.mul(_apy).mul(\r\n            block.timestamp.sub(userRewardInfo.lastAccountingTimestampSec)\r\n        );\r\n\r\n        return currentRewards.div(8640000);\r\n    }\r\n\r\n    function getxTROBalance(address user) public view returns (uint256) {\r\n        UserRewardInfo memory userRewardInfo = _userRewards[user];\r\n        uint256 currentRewards = calculateReward(userRewardInfo);\r\n\r\n        bool mathStatus;\r\n\r\n        uint256 balance = userRewardInfo.rewardMinted.add(currentRewards);\r\n        (mathStatus, balance) = balance.trySub(userRewardInfo.rewardUsed);\r\n\r\n        return balance;\r\n    }\r\n\r\n    function getTotalxTRO() public view returns (uint256) {\r\n        uint256 balance;\r\n        for (uint256 i = 0; i < _stakers.length; i++) {\r\n            balance = balance.add(getxTROBalance(_stakers[i])).add(\r\n                _userRewards[_stakers[i]].rewardUsed\r\n            );\r\n        }\r\n        return balance;\r\n    }\r\n\r\n    function getStakedTROBalance() public view returns (uint256) {\r\n        return _userRewards[msg.sender].stakedAmount;\r\n    }\r\n\r\n    function getUnstakedTROBalance() public view returns (uint256) {\r\n        return _userRewards[msg.sender].unstakedAmount;\r\n    }\r\n\r\n    function getTotalTROStaked() public view returns (uint256) {\r\n        uint256 total;\r\n        for (uint256 i = 0; i < _stakers.length; i++) {\r\n            total = total.add(_userRewards[_stakers[i]].stakedAmount);\r\n        }\r\n        return total;\r\n    }\r\n\r\n    function getPoolBalance() public view returns (uint256) {\r\n        return _troStakingPool.balance();\r\n    }\r\n\r\n    function getTROStakingPool() public view returns (address) {\r\n        return address(_troStakingPool);\r\n    }\r\n\r\n    function getAllStakers() public view returns (address[] memory) {\r\n        return _stakers;\r\n    }\r\n\r\n    function getUserRewardInfo(address user)\r\n        public\r\n        view\r\n        returns (UserRewardInfo memory info)\r\n    {\r\n        return _userRewards[user];\r\n    }\r\n}\r\n",
   "sourcePath": "C:\\Users\\Sudeep\\Desktop\\personal\\trodl\\trodl-stake\\contracts\\TrodlStake.sol",
   "ast": {
     "absolutePath": "project:/contracts/TrodlStake.sol",
@@ -68,10 +68,10 @@
         1087
       ],
       "TrodlStake": [
-        2966
+        3002
       ]
     },
-    "id": 2967,
+    "id": 3003,
     "license": "GPL-3.0-only",
     "nodeType": "SourceUnit",
     "nodes": [
@@ -196,7 +196,7 @@
             "visibility": "external"
           }
         ],
-        "scope": 2967,
+        "scope": 3003,
         "src": "357:457:3",
         "usedErrors": []
       },
@@ -1084,7 +1084,7 @@
             "src": "3525:112:3"
           }
         ],
-        "scope": 2967,
+        "scope": 3003,
         "src": "892:2748:3",
         "usedErrors": []
       },
@@ -1297,7 +1297,7 @@
             "visibility": "internal"
           }
         ],
-        "scope": 2967,
+        "scope": 3003,
         "src": "4151:243:3",
         "usedErrors": []
       },
@@ -2479,7 +2479,7 @@
             "visibility": "private"
           }
         ],
-        "scope": 2967,
+        "scope": 3003,
         "src": "4905:1741:3",
         "usedErrors": []
       },
@@ -3058,7 +3058,7 @@
             "visibility": "external"
           }
         ],
-        "scope": 2967,
+        "scope": 3003,
         "src": "6855:413:3",
         "usedErrors": []
       },
@@ -3498,7 +3498,7 @@
             "visibility": "internal"
           }
         ],
-        "scope": 2967,
+        "scope": 3003,
         "src": "8039:1825:3",
         "usedErrors": []
       },
@@ -4316,7 +4316,7 @@
             "visibility": "external"
           }
         ],
-        "scope": 2967,
+        "scope": 3003,
         "src": "9961:2918:3",
         "usedErrors": []
       },
@@ -6839,7 +6839,7 @@
             "visibility": "internal"
           }
         ],
-        "scope": 2967,
+        "scope": 3003,
         "src": "12921:1975:3",
         "usedErrors": []
       },
@@ -7082,7 +7082,7 @@
             "visibility": "public"
           }
         ],
-        "scope": 2967,
+        "scope": 3003,
         "src": "15491:317:3",
         "usedErrors": []
       },
@@ -10824,7 +10824,7 @@
             "visibility": "private"
           }
         ],
-        "scope": 2967,
+        "scope": 3003,
         "src": "17385:5728:3",
         "usedErrors": []
       },
@@ -14552,7 +14552,7 @@
             "visibility": "internal"
           }
         ],
-        "scope": 2967,
+        "scope": 3003,
         "src": "23310:6672:3",
         "usedErrors": []
       },
@@ -14590,9 +14590,9 @@
         ],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 2966,
+        "id": 3002,
         "linearizedBaseContracts": [
-          2966,
+          3002,
           1719,
           1418,
           840,
@@ -15105,7 +15105,7 @@
             "name": "REWARD_USER",
             "nameLocation": "30446:11:3",
             "nodeType": "VariableDeclaration",
-            "scope": 2966,
+            "scope": 3002,
             "src": "30438:53:3",
             "stateVariable": true,
             "storageLocation": "default",
@@ -15229,7 +15229,7 @@
             "name": "_apy",
             "nameLocation": "30513:4:3",
             "nodeType": "VariableDeclaration",
-            "scope": 2966,
+            "scope": 3002,
             "src": "30498:19:3",
             "stateVariable": true,
             "storageLocation": "default",
@@ -15257,7 +15257,7 @@
             "name": "_lockupPeriod",
             "nameLocation": "30566:13:3",
             "nodeType": "VariableDeclaration",
-            "scope": 2966,
+            "scope": 3002,
             "src": "30551:28:3",
             "stateVariable": true,
             "storageLocation": "default",
@@ -15284,7 +15284,7 @@
             "name": "_troStakingPool",
             "nameLocation": "30632:15:3",
             "nodeType": "VariableDeclaration",
-            "scope": 2966,
+            "scope": 3002,
             "src": "30614:33:3",
             "stateVariable": true,
             "storageLocation": "default",
@@ -15454,7 +15454,7 @@
             "name": "UserRewardInfo",
             "nameLocation": "30663:14:3",
             "nodeType": "StructDefinition",
-            "scope": 2966,
+            "scope": 3002,
             "src": "30656:199:3",
             "visibility": "public"
           },
@@ -15465,7 +15465,7 @@
             "name": "_userRewards",
             "nameLocation": "30906:12:3",
             "nodeType": "VariableDeclaration",
-            "scope": 2966,
+            "scope": 3002,
             "src": "30863:55:3",
             "stateVariable": true,
             "storageLocation": "default",
@@ -15518,7 +15518,7 @@
             "name": "_stakers",
             "nameLocation": "30945:8:3",
             "nodeType": "VariableDeclaration",
-            "scope": 2966,
+            "scope": 3002,
             "src": "30927:26:3",
             "stateVariable": true,
             "storageLocation": "default",
@@ -15930,7 +15930,7 @@
               "parameters": [],
               "src": "31057:0:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "30962:310:3",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -17806,7 +17806,7 @@
               "parameters": [],
               "src": "31331:0:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "31280:1716:3",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -17947,7 +17947,7 @@
               "parameters": [],
               "src": "33033:0:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "33004:94:3",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -19443,7 +19443,7 @@
               "parameters": [],
               "src": "33159:0:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "33106:1249:3",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -19585,7 +19585,7 @@
               "parameters": [],
               "src": "34396:0:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "34363:111:3",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -21485,7 +21485,7 @@
               "parameters": [],
               "src": "34539:0:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "34482:1653:3",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -22721,7 +22721,7 @@
               "parameters": [],
               "src": "36182:0:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "36143:1062:3",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -24093,7 +24093,7 @@
               "parameters": [],
               "src": "37267:0:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "37213:1187:3",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -24225,7 +24225,7 @@
               "parameters": [],
               "src": "38464:0:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "38408:109:3",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -24357,7 +24357,7 @@
               "parameters": [],
               "src": "38582:0:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "38525:111:3",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -24772,7 +24772,7 @@
               ],
               "src": "39091:9:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "38980:346:3",
             "stateMutability": "view",
             "virtual": false,
@@ -25336,7 +25336,7 @@
               ],
               "src": "39392:9:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "39334:420:3",
             "stateMutability": "view",
             "virtual": false,
@@ -25877,7 +25877,7 @@
               ],
               "src": "39806:9:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "39762:320:3",
             "stateMutability": "view",
             "virtual": false,
@@ -26011,7 +26011,7 @@
               ],
               "src": "40141:9:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "40090:124:3",
             "stateMutability": "view",
             "virtual": false,
@@ -26145,7 +26145,7 @@
               ],
               "src": "40275:9:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "40222:128:3",
             "stateMutability": "view",
             "virtual": false,
@@ -26153,65 +26153,381 @@
           },
           {
             "body": {
-              "id": 2931,
+              "id": 2957,
               "nodeType": "Block",
-              "src": "40417:51:3",
+              "src": "40417:195:3",
               "statements": [
                 {
-                  "expression": {
-                    "arguments": [],
-                    "expression": {
-                      "argumentTypes": [],
-                      "expression": {
+                  "assignments": [
+                    2928
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 2928,
+                      "mutability": "mutable",
+                      "name": "total",
+                      "nameLocation": "40436:5:3",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 2957,
+                      "src": "40428:13:3",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
                         "id": 2927,
-                        "name": "_troStakingPool",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 2089,
-                        "src": "40435:15:3",
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "40428:7:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_TokenPool_$1087",
-                          "typeString": "contract TokenPool"
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         }
                       },
-                      "id": 2928,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 2929,
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "40428:13:3"
+                },
+                {
+                  "body": {
+                    "id": 2953,
+                    "nodeType": "Block",
+                    "src": "40498:84:3",
+                    "statements": [
+                      {
+                        "expression": {
+                          "id": 2951,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "id": 2941,
+                            "name": "total",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2928,
+                            "src": "40513:5:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "arguments": [
+                              {
+                                "expression": {
+                                  "baseExpression": {
+                                    "id": 2944,
+                                    "name": "_userRewards",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 2105,
+                                    "src": "40531:12:3",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserRewardInfo_$2100_storage_$",
+                                      "typeString": "mapping(address => struct TrodlStake.UserRewardInfo storage ref)"
+                                    }
+                                  },
+                                  "id": 2948,
+                                  "indexExpression": {
+                                    "baseExpression": {
+                                      "id": 2945,
+                                      "name": "_stakers",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 2108,
+                                      "src": "40544:8:3",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                                        "typeString": "address[] storage ref"
+                                      }
+                                    },
+                                    "id": 2947,
+                                    "indexExpression": {
+                                      "id": 2946,
+                                      "name": "i",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 2931,
+                                      "src": "40553:1:3",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                      }
+                                    },
+                                    "isConstant": false,
+                                    "isLValue": true,
+                                    "isPure": false,
+                                    "lValueRequested": false,
+                                    "nodeType": "IndexAccess",
+                                    "src": "40544:11:3",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_address",
+                                      "typeString": "address"
+                                    }
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "nodeType": "IndexAccess",
+                                  "src": "40531:25:3",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_struct$_UserRewardInfo_$2100_storage",
+                                    "typeString": "struct TrodlStake.UserRewardInfo storage ref"
+                                  }
+                                },
+                                "id": 2949,
+                                "isConstant": false,
+                                "isLValue": true,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberName": "stakedAmount",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 2091,
+                                "src": "40531:38:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "expression": {
+                                "id": 2942,
+                                "name": "total",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 2928,
+                                "src": "40521:5:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              "id": 2943,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "add",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 1893,
+                              "src": "40521:9:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
+                                "typeString": "function (uint256,uint256) pure returns (uint256)"
+                              }
+                            },
+                            "id": 2950,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "40521:49:3",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "40513:57:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 2952,
+                        "nodeType": "ExpressionStatement",
+                        "src": "40513:57:3"
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 2937,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 2934,
+                      "name": "i",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2931,
+                      "src": "40472:1:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "expression": {
+                        "id": 2935,
+                        "name": "_stakers",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2108,
+                        "src": "40476:8:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                          "typeString": "address[] storage ref"
+                        }
+                      },
+                      "id": 2936,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberName": "balance",
+                      "memberName": "length",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1068,
-                      "src": "40435:23:3",
+                      "src": "40476:15:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_external_view$__$returns$_t_uint256_$",
-                        "typeString": "function () view external returns (uint256)"
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
                       }
                     },
-                    "id": 2929,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": false,
-                    "kind": "functionCall",
-                    "lValueRequested": false,
-                    "names": [],
-                    "nodeType": "FunctionCall",
-                    "src": "40435:25:3",
-                    "tryCall": false,
+                    "src": "40472:19:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 2954,
+                  "initializationExpression": {
+                    "assignments": [
+                      2931
+                    ],
+                    "declarations": [
+                      {
+                        "constant": false,
+                        "id": 2931,
+                        "mutability": "mutable",
+                        "name": "i",
+                        "nameLocation": "40465:1:3",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 2954,
+                        "src": "40457:9:3",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 2930,
+                          "name": "uint256",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "40457:7:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "id": 2933,
+                    "initialValue": {
+                      "hexValue": "30",
+                      "id": 2932,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "40469:1:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "nodeType": "VariableDeclarationStatement",
+                    "src": "40457:13:3"
+                  },
+                  "loopExpression": {
+                    "expression": {
+                      "id": 2939,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "++",
+                      "prefix": false,
+                      "src": "40493:3:3",
+                      "subExpression": {
+                        "id": 2938,
+                        "name": "i",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2931,
+                        "src": "40493:1:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 2940,
+                    "nodeType": "ExpressionStatement",
+                    "src": "40493:3:3"
+                  },
+                  "nodeType": "ForStatement",
+                  "src": "40452:130:3"
+                },
+                {
+                  "expression": {
+                    "id": 2955,
+                    "name": "total",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 2928,
+                    "src": "40599:5:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "functionReturnParameters": 2926,
-                  "id": 2930,
+                  "id": 2956,
                   "nodeType": "Return",
-                  "src": "40428:32:3"
+                  "src": "40592:12:3"
                 }
               ]
             },
             "functionSelector": "0ad38b4e",
-            "id": 2932,
+            "id": 2958,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -26235,7 +26551,7 @@
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2932,
+                  "scope": 2958,
                   "src": "40408:7:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -26258,28 +26574,141 @@
               ],
               "src": "40407:9:3"
             },
-            "scope": 2966,
-            "src": "40358:110:3",
+            "scope": 3002,
+            "src": "40358:254:3",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 2942,
+              "id": 2967,
               "nodeType": "Block",
-              "src": "40535:50:3",
+              "src": "40676:51:3",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "id": 2963,
+                        "name": "_troStakingPool",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2089,
+                        "src": "40694:15:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_TokenPool_$1087",
+                          "typeString": "contract TokenPool"
+                        }
+                      },
+                      "id": 2964,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "balance",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1068,
+                      "src": "40694:23:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$__$returns$_t_uint256_$",
+                        "typeString": "function () view external returns (uint256)"
+                      }
+                    },
+                    "id": 2965,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "40694:25:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 2962,
+                  "id": 2966,
+                  "nodeType": "Return",
+                  "src": "40687:32:3"
+                }
+              ]
+            },
+            "functionSelector": "abd70aa2",
+            "id": 2968,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPoolBalance",
+            "nameLocation": "40629:14:3",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2959,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "40643:2:3"
+            },
+            "returnParameters": {
+              "id": 2962,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2961,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2968,
+                  "src": "40667:7:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2960,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "40667:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "40666:9:3"
+            },
+            "scope": 3002,
+            "src": "40620:107:3",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 2978,
+              "nodeType": "Block",
+              "src": "40794:50:3",
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 2939,
+                        "id": 2975,
                         "name": "_troStakingPool",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 2089,
-                        "src": "40561:15:3",
+                        "src": "40820:15:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_TokenPool_$1087",
                           "typeString": "contract TokenPool"
@@ -26293,26 +26722,26 @@
                           "typeString": "contract TokenPool"
                         }
                       ],
-                      "id": 2938,
+                      "id": 2974,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "ElementaryTypeNameExpression",
-                      "src": "40553:7:3",
+                      "src": "40812:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_type$_t_address_$",
                         "typeString": "type(address)"
                       },
                       "typeName": {
-                        "id": 2937,
+                        "id": 2973,
                         "name": "address",
                         "nodeType": "ElementaryTypeName",
-                        "src": "40553:7:3",
+                        "src": "40812:7:3",
                         "typeDescriptions": {}
                       }
                     },
-                    "id": 2940,
+                    "id": 2976,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -26320,47 +26749,47 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "40553:24:3",
+                    "src": "40812:24:3",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "functionReturnParameters": 2936,
-                  "id": 2941,
+                  "functionReturnParameters": 2972,
+                  "id": 2977,
                   "nodeType": "Return",
-                  "src": "40546:31:3"
+                  "src": "40805:31:3"
                 }
               ]
             },
             "functionSelector": "f87b83a9",
-            "id": 2943,
+            "id": 2979,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getTROStakingPool",
-            "nameLocation": "40485:17:3",
+            "nameLocation": "40744:17:3",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2933,
+              "id": 2969,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "40502:2:3"
+              "src": "40761:2:3"
             },
             "returnParameters": {
-              "id": 2936,
+              "id": 2972,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2935,
+                  "id": 2971,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2943,
-                  "src": "40526:7:3",
+                  "scope": 2979,
+                  "src": "40785:7:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -26368,10 +26797,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2934,
+                    "id": 2970,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "40526:7:3",
+                    "src": "40785:7:3",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -26381,67 +26810,67 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "40525:9:3"
+              "src": "40784:9:3"
             },
-            "scope": 2966,
-            "src": "40476:109:3",
+            "scope": 3002,
+            "src": "40735:109:3",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 2951,
+              "id": 2987,
               "nodeType": "Block",
-              "src": "40657:34:3",
+              "src": "40916:34:3",
               "statements": [
                 {
                   "expression": {
-                    "id": 2949,
+                    "id": 2985,
                     "name": "_stakers",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
                     "referencedDeclaration": 2108,
-                    "src": "40675:8:3",
+                    "src": "40934:8:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage",
                       "typeString": "address[] storage ref"
                     }
                   },
-                  "functionReturnParameters": 2948,
-                  "id": 2950,
+                  "functionReturnParameters": 2984,
+                  "id": 2986,
                   "nodeType": "Return",
-                  "src": "40668:15:3"
+                  "src": "40927:15:3"
                 }
               ]
             },
             "functionSelector": "6e4f88c8",
-            "id": 2952,
+            "id": 2988,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getAllStakers",
-            "nameLocation": "40602:13:3",
+            "nameLocation": "40861:13:3",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2944,
+              "id": 2980,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "40615:2:3"
+              "src": "40874:2:3"
             },
             "returnParameters": {
-              "id": 2948,
+              "id": 2984,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2947,
+                  "id": 2983,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2952,
-                  "src": "40639:16:3",
+                  "scope": 2988,
+                  "src": "40898:16:3",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -26450,19 +26879,19 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 2945,
+                      "id": 2981,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "40639:7:3",
+                      "src": "40898:7:3",
                       "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 2946,
+                    "id": 2982,
                     "nodeType": "ArrayTypeName",
-                    "src": "40639:9:3",
+                    "src": "40898:9:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -26471,42 +26900,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "40638:18:3"
+              "src": "40897:18:3"
             },
-            "scope": 2966,
-            "src": "40593:98:3",
+            "scope": 3002,
+            "src": "40852:98:3",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 2964,
+              "id": 3000,
               "nodeType": "Block",
-              "src": "40821:44:3",
+              "src": "41080:44:3",
               "statements": [
                 {
                   "expression": {
                     "baseExpression": {
-                      "id": 2960,
+                      "id": 2996,
                       "name": "_userRewards",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 2105,
-                      "src": "40839:12:3",
+                      "src": "41098:12:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserRewardInfo_$2100_storage_$",
                         "typeString": "mapping(address => struct TrodlStake.UserRewardInfo storage ref)"
                       }
                     },
-                    "id": 2962,
+                    "id": 2998,
                     "indexExpression": {
-                      "id": 2961,
+                      "id": 2997,
                       "name": "user",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2954,
-                      "src": "40852:4:3",
+                      "referencedDeclaration": 2990,
+                      "src": "41111:4:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -26517,40 +26946,40 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "40839:18:3",
+                    "src": "41098:18:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_UserRewardInfo_$2100_storage",
                       "typeString": "struct TrodlStake.UserRewardInfo storage ref"
                     }
                   },
-                  "functionReturnParameters": 2959,
-                  "id": 2963,
+                  "functionReturnParameters": 2995,
+                  "id": 2999,
                   "nodeType": "Return",
-                  "src": "40832:25:3"
+                  "src": "41091:25:3"
                 }
               ]
             },
             "functionSelector": "69517310",
-            "id": 2965,
+            "id": 3001,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getUserRewardInfo",
-            "nameLocation": "40708:17:3",
+            "nameLocation": "40967:17:3",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2955,
+              "id": 2991,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2954,
+                  "id": 2990,
                   "mutability": "mutable",
                   "name": "user",
-                  "nameLocation": "40734:4:3",
+                  "nameLocation": "40993:4:3",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2965,
-                  "src": "40726:12:3",
+                  "scope": 3001,
+                  "src": "40985:12:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -26558,10 +26987,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2953,
+                    "id": 2989,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "40726:7:3",
+                    "src": "40985:7:3",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -26571,21 +27000,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "40725:14:3"
+              "src": "40984:14:3"
             },
             "returnParameters": {
-              "id": 2959,
+              "id": 2995,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2958,
+                  "id": 2994,
                   "mutability": "mutable",
                   "name": "info",
-                  "nameLocation": "40810:4:3",
+                  "nameLocation": "41069:4:3",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2965,
-                  "src": "40788:26:3",
+                  "scope": 3001,
+                  "src": "41047:26:3",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -26593,17 +27022,17 @@
                     "typeString": "struct TrodlStake.UserRewardInfo"
                   },
                   "typeName": {
-                    "id": 2957,
+                    "id": 2993,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 2956,
+                      "id": 2992,
                       "name": "UserRewardInfo",
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 2100,
-                      "src": "40788:14:3"
+                      "src": "41047:14:3"
                     },
                     "referencedDeclaration": 2100,
-                    "src": "40788:14:3",
+                    "src": "41047:14:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_UserRewardInfo_$2100_storage_ptr",
                       "typeString": "struct TrodlStake.UserRewardInfo"
@@ -26612,21 +27041,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "40787:28:3"
+              "src": "41046:28:3"
             },
-            "scope": 2966,
-            "src": "40699:166:3",
+            "scope": 3002,
+            "src": "40958:166:3",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 2967,
-        "src": "29986:10882:3",
+        "scope": 3003,
+        "src": "29986:11141:3",
         "usedErrors": []
       }
     ],
-    "src": "42:40828:3"
+    "src": "42:41087:3"
   },
   "legacyAST": {
     "absolutePath": "project:/contracts/TrodlStake.sol",
@@ -26665,10 +27094,10 @@
         1087
       ],
       "TrodlStake": [
-        2966
+        3002
       ]
     },
-    "id": 2967,
+    "id": 3003,
     "license": "GPL-3.0-only",
     "nodeType": "SourceUnit",
     "nodes": [
@@ -26793,7 +27222,7 @@
             "visibility": "external"
           }
         ],
-        "scope": 2967,
+        "scope": 3003,
         "src": "357:457:3",
         "usedErrors": []
       },
@@ -27681,7 +28110,7 @@
             "src": "3525:112:3"
           }
         ],
-        "scope": 2967,
+        "scope": 3003,
         "src": "892:2748:3",
         "usedErrors": []
       },
@@ -27894,7 +28323,7 @@
             "visibility": "internal"
           }
         ],
-        "scope": 2967,
+        "scope": 3003,
         "src": "4151:243:3",
         "usedErrors": []
       },
@@ -29076,7 +29505,7 @@
             "visibility": "private"
           }
         ],
-        "scope": 2967,
+        "scope": 3003,
         "src": "4905:1741:3",
         "usedErrors": []
       },
@@ -29655,7 +30084,7 @@
             "visibility": "external"
           }
         ],
-        "scope": 2967,
+        "scope": 3003,
         "src": "6855:413:3",
         "usedErrors": []
       },
@@ -30095,7 +30524,7 @@
             "visibility": "internal"
           }
         ],
-        "scope": 2967,
+        "scope": 3003,
         "src": "8039:1825:3",
         "usedErrors": []
       },
@@ -30913,7 +31342,7 @@
             "visibility": "external"
           }
         ],
-        "scope": 2967,
+        "scope": 3003,
         "src": "9961:2918:3",
         "usedErrors": []
       },
@@ -33436,7 +33865,7 @@
             "visibility": "internal"
           }
         ],
-        "scope": 2967,
+        "scope": 3003,
         "src": "12921:1975:3",
         "usedErrors": []
       },
@@ -33679,7 +34108,7 @@
             "visibility": "public"
           }
         ],
-        "scope": 2967,
+        "scope": 3003,
         "src": "15491:317:3",
         "usedErrors": []
       },
@@ -37421,7 +37850,7 @@
             "visibility": "private"
           }
         ],
-        "scope": 2967,
+        "scope": 3003,
         "src": "17385:5728:3",
         "usedErrors": []
       },
@@ -41149,7 +41578,7 @@
             "visibility": "internal"
           }
         ],
-        "scope": 2967,
+        "scope": 3003,
         "src": "23310:6672:3",
         "usedErrors": []
       },
@@ -41187,9 +41616,9 @@
         ],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 2966,
+        "id": 3002,
         "linearizedBaseContracts": [
-          2966,
+          3002,
           1719,
           1418,
           840,
@@ -41702,7 +42131,7 @@
             "name": "REWARD_USER",
             "nameLocation": "30446:11:3",
             "nodeType": "VariableDeclaration",
-            "scope": 2966,
+            "scope": 3002,
             "src": "30438:53:3",
             "stateVariable": true,
             "storageLocation": "default",
@@ -41826,7 +42255,7 @@
             "name": "_apy",
             "nameLocation": "30513:4:3",
             "nodeType": "VariableDeclaration",
-            "scope": 2966,
+            "scope": 3002,
             "src": "30498:19:3",
             "stateVariable": true,
             "storageLocation": "default",
@@ -41854,7 +42283,7 @@
             "name": "_lockupPeriod",
             "nameLocation": "30566:13:3",
             "nodeType": "VariableDeclaration",
-            "scope": 2966,
+            "scope": 3002,
             "src": "30551:28:3",
             "stateVariable": true,
             "storageLocation": "default",
@@ -41881,7 +42310,7 @@
             "name": "_troStakingPool",
             "nameLocation": "30632:15:3",
             "nodeType": "VariableDeclaration",
-            "scope": 2966,
+            "scope": 3002,
             "src": "30614:33:3",
             "stateVariable": true,
             "storageLocation": "default",
@@ -42051,7 +42480,7 @@
             "name": "UserRewardInfo",
             "nameLocation": "30663:14:3",
             "nodeType": "StructDefinition",
-            "scope": 2966,
+            "scope": 3002,
             "src": "30656:199:3",
             "visibility": "public"
           },
@@ -42062,7 +42491,7 @@
             "name": "_userRewards",
             "nameLocation": "30906:12:3",
             "nodeType": "VariableDeclaration",
-            "scope": 2966,
+            "scope": 3002,
             "src": "30863:55:3",
             "stateVariable": true,
             "storageLocation": "default",
@@ -42115,7 +42544,7 @@
             "name": "_stakers",
             "nameLocation": "30945:8:3",
             "nodeType": "VariableDeclaration",
-            "scope": 2966,
+            "scope": 3002,
             "src": "30927:26:3",
             "stateVariable": true,
             "storageLocation": "default",
@@ -42527,7 +42956,7 @@
               "parameters": [],
               "src": "31057:0:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "30962:310:3",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -44403,7 +44832,7 @@
               "parameters": [],
               "src": "31331:0:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "31280:1716:3",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -44544,7 +44973,7 @@
               "parameters": [],
               "src": "33033:0:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "33004:94:3",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -46040,7 +46469,7 @@
               "parameters": [],
               "src": "33159:0:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "33106:1249:3",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -46182,7 +46611,7 @@
               "parameters": [],
               "src": "34396:0:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "34363:111:3",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -48082,7 +48511,7 @@
               "parameters": [],
               "src": "34539:0:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "34482:1653:3",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -49318,7 +49747,7 @@
               "parameters": [],
               "src": "36182:0:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "36143:1062:3",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -50690,7 +51119,7 @@
               "parameters": [],
               "src": "37267:0:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "37213:1187:3",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -50822,7 +51251,7 @@
               "parameters": [],
               "src": "38464:0:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "38408:109:3",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -50954,7 +51383,7 @@
               "parameters": [],
               "src": "38582:0:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "38525:111:3",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -51369,7 +51798,7 @@
               ],
               "src": "39091:9:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "38980:346:3",
             "stateMutability": "view",
             "virtual": false,
@@ -51933,7 +52362,7 @@
               ],
               "src": "39392:9:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "39334:420:3",
             "stateMutability": "view",
             "virtual": false,
@@ -52474,7 +52903,7 @@
               ],
               "src": "39806:9:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "39762:320:3",
             "stateMutability": "view",
             "virtual": false,
@@ -52608,7 +53037,7 @@
               ],
               "src": "40141:9:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "40090:124:3",
             "stateMutability": "view",
             "virtual": false,
@@ -52742,7 +53171,7 @@
               ],
               "src": "40275:9:3"
             },
-            "scope": 2966,
+            "scope": 3002,
             "src": "40222:128:3",
             "stateMutability": "view",
             "virtual": false,
@@ -52750,65 +53179,381 @@
           },
           {
             "body": {
-              "id": 2931,
+              "id": 2957,
               "nodeType": "Block",
-              "src": "40417:51:3",
+              "src": "40417:195:3",
               "statements": [
                 {
-                  "expression": {
-                    "arguments": [],
-                    "expression": {
-                      "argumentTypes": [],
-                      "expression": {
+                  "assignments": [
+                    2928
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 2928,
+                      "mutability": "mutable",
+                      "name": "total",
+                      "nameLocation": "40436:5:3",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 2957,
+                      "src": "40428:13:3",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
                         "id": 2927,
-                        "name": "_troStakingPool",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 2089,
-                        "src": "40435:15:3",
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "40428:7:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_TokenPool_$1087",
-                          "typeString": "contract TokenPool"
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         }
                       },
-                      "id": 2928,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 2929,
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "40428:13:3"
+                },
+                {
+                  "body": {
+                    "id": 2953,
+                    "nodeType": "Block",
+                    "src": "40498:84:3",
+                    "statements": [
+                      {
+                        "expression": {
+                          "id": 2951,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "id": 2941,
+                            "name": "total",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2928,
+                            "src": "40513:5:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "arguments": [
+                              {
+                                "expression": {
+                                  "baseExpression": {
+                                    "id": 2944,
+                                    "name": "_userRewards",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 2105,
+                                    "src": "40531:12:3",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserRewardInfo_$2100_storage_$",
+                                      "typeString": "mapping(address => struct TrodlStake.UserRewardInfo storage ref)"
+                                    }
+                                  },
+                                  "id": 2948,
+                                  "indexExpression": {
+                                    "baseExpression": {
+                                      "id": 2945,
+                                      "name": "_stakers",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 2108,
+                                      "src": "40544:8:3",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                                        "typeString": "address[] storage ref"
+                                      }
+                                    },
+                                    "id": 2947,
+                                    "indexExpression": {
+                                      "id": 2946,
+                                      "name": "i",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 2931,
+                                      "src": "40553:1:3",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                      }
+                                    },
+                                    "isConstant": false,
+                                    "isLValue": true,
+                                    "isPure": false,
+                                    "lValueRequested": false,
+                                    "nodeType": "IndexAccess",
+                                    "src": "40544:11:3",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_address",
+                                      "typeString": "address"
+                                    }
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "nodeType": "IndexAccess",
+                                  "src": "40531:25:3",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_struct$_UserRewardInfo_$2100_storage",
+                                    "typeString": "struct TrodlStake.UserRewardInfo storage ref"
+                                  }
+                                },
+                                "id": 2949,
+                                "isConstant": false,
+                                "isLValue": true,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberName": "stakedAmount",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 2091,
+                                "src": "40531:38:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "expression": {
+                                "id": 2942,
+                                "name": "total",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 2928,
+                                "src": "40521:5:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              "id": 2943,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "add",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 1893,
+                              "src": "40521:9:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
+                                "typeString": "function (uint256,uint256) pure returns (uint256)"
+                              }
+                            },
+                            "id": 2950,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "40521:49:3",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "40513:57:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 2952,
+                        "nodeType": "ExpressionStatement",
+                        "src": "40513:57:3"
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 2937,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 2934,
+                      "name": "i",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2931,
+                      "src": "40472:1:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "expression": {
+                        "id": 2935,
+                        "name": "_stakers",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2108,
+                        "src": "40476:8:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                          "typeString": "address[] storage ref"
+                        }
+                      },
+                      "id": 2936,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberName": "balance",
+                      "memberName": "length",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1068,
-                      "src": "40435:23:3",
+                      "src": "40476:15:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_external_view$__$returns$_t_uint256_$",
-                        "typeString": "function () view external returns (uint256)"
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
                       }
                     },
-                    "id": 2929,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": false,
-                    "kind": "functionCall",
-                    "lValueRequested": false,
-                    "names": [],
-                    "nodeType": "FunctionCall",
-                    "src": "40435:25:3",
-                    "tryCall": false,
+                    "src": "40472:19:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 2954,
+                  "initializationExpression": {
+                    "assignments": [
+                      2931
+                    ],
+                    "declarations": [
+                      {
+                        "constant": false,
+                        "id": 2931,
+                        "mutability": "mutable",
+                        "name": "i",
+                        "nameLocation": "40465:1:3",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 2954,
+                        "src": "40457:9:3",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 2930,
+                          "name": "uint256",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "40457:7:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "id": 2933,
+                    "initialValue": {
+                      "hexValue": "30",
+                      "id": 2932,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "40469:1:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "nodeType": "VariableDeclarationStatement",
+                    "src": "40457:13:3"
+                  },
+                  "loopExpression": {
+                    "expression": {
+                      "id": 2939,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "++",
+                      "prefix": false,
+                      "src": "40493:3:3",
+                      "subExpression": {
+                        "id": 2938,
+                        "name": "i",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2931,
+                        "src": "40493:1:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 2940,
+                    "nodeType": "ExpressionStatement",
+                    "src": "40493:3:3"
+                  },
+                  "nodeType": "ForStatement",
+                  "src": "40452:130:3"
+                },
+                {
+                  "expression": {
+                    "id": 2955,
+                    "name": "total",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 2928,
+                    "src": "40599:5:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "functionReturnParameters": 2926,
-                  "id": 2930,
+                  "id": 2956,
                   "nodeType": "Return",
-                  "src": "40428:32:3"
+                  "src": "40592:12:3"
                 }
               ]
             },
             "functionSelector": "0ad38b4e",
-            "id": 2932,
+            "id": 2958,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -52832,7 +53577,7 @@
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2932,
+                  "scope": 2958,
                   "src": "40408:7:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -52855,28 +53600,141 @@
               ],
               "src": "40407:9:3"
             },
-            "scope": 2966,
-            "src": "40358:110:3",
+            "scope": 3002,
+            "src": "40358:254:3",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 2942,
+              "id": 2967,
               "nodeType": "Block",
-              "src": "40535:50:3",
+              "src": "40676:51:3",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "id": 2963,
+                        "name": "_troStakingPool",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2089,
+                        "src": "40694:15:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_TokenPool_$1087",
+                          "typeString": "contract TokenPool"
+                        }
+                      },
+                      "id": 2964,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "balance",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1068,
+                      "src": "40694:23:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$__$returns$_t_uint256_$",
+                        "typeString": "function () view external returns (uint256)"
+                      }
+                    },
+                    "id": 2965,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "40694:25:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 2962,
+                  "id": 2966,
+                  "nodeType": "Return",
+                  "src": "40687:32:3"
+                }
+              ]
+            },
+            "functionSelector": "abd70aa2",
+            "id": 2968,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPoolBalance",
+            "nameLocation": "40629:14:3",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2959,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "40643:2:3"
+            },
+            "returnParameters": {
+              "id": 2962,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2961,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2968,
+                  "src": "40667:7:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2960,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "40667:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "40666:9:3"
+            },
+            "scope": 3002,
+            "src": "40620:107:3",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 2978,
+              "nodeType": "Block",
+              "src": "40794:50:3",
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 2939,
+                        "id": 2975,
                         "name": "_troStakingPool",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 2089,
-                        "src": "40561:15:3",
+                        "src": "40820:15:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_TokenPool_$1087",
                           "typeString": "contract TokenPool"
@@ -52890,26 +53748,26 @@
                           "typeString": "contract TokenPool"
                         }
                       ],
-                      "id": 2938,
+                      "id": 2974,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "ElementaryTypeNameExpression",
-                      "src": "40553:7:3",
+                      "src": "40812:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_type$_t_address_$",
                         "typeString": "type(address)"
                       },
                       "typeName": {
-                        "id": 2937,
+                        "id": 2973,
                         "name": "address",
                         "nodeType": "ElementaryTypeName",
-                        "src": "40553:7:3",
+                        "src": "40812:7:3",
                         "typeDescriptions": {}
                       }
                     },
-                    "id": 2940,
+                    "id": 2976,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -52917,47 +53775,47 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "40553:24:3",
+                    "src": "40812:24:3",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "functionReturnParameters": 2936,
-                  "id": 2941,
+                  "functionReturnParameters": 2972,
+                  "id": 2977,
                   "nodeType": "Return",
-                  "src": "40546:31:3"
+                  "src": "40805:31:3"
                 }
               ]
             },
             "functionSelector": "f87b83a9",
-            "id": 2943,
+            "id": 2979,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getTROStakingPool",
-            "nameLocation": "40485:17:3",
+            "nameLocation": "40744:17:3",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2933,
+              "id": 2969,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "40502:2:3"
+              "src": "40761:2:3"
             },
             "returnParameters": {
-              "id": 2936,
+              "id": 2972,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2935,
+                  "id": 2971,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2943,
-                  "src": "40526:7:3",
+                  "scope": 2979,
+                  "src": "40785:7:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -52965,10 +53823,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2934,
+                    "id": 2970,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "40526:7:3",
+                    "src": "40785:7:3",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -52978,67 +53836,67 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "40525:9:3"
+              "src": "40784:9:3"
             },
-            "scope": 2966,
-            "src": "40476:109:3",
+            "scope": 3002,
+            "src": "40735:109:3",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 2951,
+              "id": 2987,
               "nodeType": "Block",
-              "src": "40657:34:3",
+              "src": "40916:34:3",
               "statements": [
                 {
                   "expression": {
-                    "id": 2949,
+                    "id": 2985,
                     "name": "_stakers",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
                     "referencedDeclaration": 2108,
-                    "src": "40675:8:3",
+                    "src": "40934:8:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage",
                       "typeString": "address[] storage ref"
                     }
                   },
-                  "functionReturnParameters": 2948,
-                  "id": 2950,
+                  "functionReturnParameters": 2984,
+                  "id": 2986,
                   "nodeType": "Return",
-                  "src": "40668:15:3"
+                  "src": "40927:15:3"
                 }
               ]
             },
             "functionSelector": "6e4f88c8",
-            "id": 2952,
+            "id": 2988,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getAllStakers",
-            "nameLocation": "40602:13:3",
+            "nameLocation": "40861:13:3",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2944,
+              "id": 2980,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "40615:2:3"
+              "src": "40874:2:3"
             },
             "returnParameters": {
-              "id": 2948,
+              "id": 2984,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2947,
+                  "id": 2983,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2952,
-                  "src": "40639:16:3",
+                  "scope": 2988,
+                  "src": "40898:16:3",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -53047,19 +53905,19 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 2945,
+                      "id": 2981,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "40639:7:3",
+                      "src": "40898:7:3",
                       "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 2946,
+                    "id": 2982,
                     "nodeType": "ArrayTypeName",
-                    "src": "40639:9:3",
+                    "src": "40898:9:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -53068,42 +53926,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "40638:18:3"
+              "src": "40897:18:3"
             },
-            "scope": 2966,
-            "src": "40593:98:3",
+            "scope": 3002,
+            "src": "40852:98:3",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 2964,
+              "id": 3000,
               "nodeType": "Block",
-              "src": "40821:44:3",
+              "src": "41080:44:3",
               "statements": [
                 {
                   "expression": {
                     "baseExpression": {
-                      "id": 2960,
+                      "id": 2996,
                       "name": "_userRewards",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 2105,
-                      "src": "40839:12:3",
+                      "src": "41098:12:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserRewardInfo_$2100_storage_$",
                         "typeString": "mapping(address => struct TrodlStake.UserRewardInfo storage ref)"
                       }
                     },
-                    "id": 2962,
+                    "id": 2998,
                     "indexExpression": {
-                      "id": 2961,
+                      "id": 2997,
                       "name": "user",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2954,
-                      "src": "40852:4:3",
+                      "referencedDeclaration": 2990,
+                      "src": "41111:4:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -53114,40 +53972,40 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "40839:18:3",
+                    "src": "41098:18:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_UserRewardInfo_$2100_storage",
                       "typeString": "struct TrodlStake.UserRewardInfo storage ref"
                     }
                   },
-                  "functionReturnParameters": 2959,
-                  "id": 2963,
+                  "functionReturnParameters": 2995,
+                  "id": 2999,
                   "nodeType": "Return",
-                  "src": "40832:25:3"
+                  "src": "41091:25:3"
                 }
               ]
             },
             "functionSelector": "69517310",
-            "id": 2965,
+            "id": 3001,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getUserRewardInfo",
-            "nameLocation": "40708:17:3",
+            "nameLocation": "40967:17:3",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2955,
+              "id": 2991,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2954,
+                  "id": 2990,
                   "mutability": "mutable",
                   "name": "user",
-                  "nameLocation": "40734:4:3",
+                  "nameLocation": "40993:4:3",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2965,
-                  "src": "40726:12:3",
+                  "scope": 3001,
+                  "src": "40985:12:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -53155,10 +54013,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2953,
+                    "id": 2989,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "40726:7:3",
+                    "src": "40985:7:3",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -53168,21 +54026,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "40725:14:3"
+              "src": "40984:14:3"
             },
             "returnParameters": {
-              "id": 2959,
+              "id": 2995,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2958,
+                  "id": 2994,
                   "mutability": "mutable",
                   "name": "info",
-                  "nameLocation": "40810:4:3",
+                  "nameLocation": "41069:4:3",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2965,
-                  "src": "40788:26:3",
+                  "scope": 3001,
+                  "src": "41047:26:3",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -53190,17 +54048,17 @@
                     "typeString": "struct TrodlStake.UserRewardInfo"
                   },
                   "typeName": {
-                    "id": 2957,
+                    "id": 2993,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 2956,
+                      "id": 2992,
                       "name": "UserRewardInfo",
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 2100,
-                      "src": "40788:14:3"
+                      "src": "41047:14:3"
                     },
                     "referencedDeclaration": 2100,
-                    "src": "40788:14:3",
+                    "src": "41047:14:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_UserRewardInfo_$2100_storage_ptr",
                       "typeString": "struct TrodlStake.UserRewardInfo"
@@ -53209,21 +54067,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "40787:28:3"
+              "src": "41046:28:3"
             },
-            "scope": 2966,
-            "src": "40699:166:3",
+            "scope": 3002,
+            "src": "40958:166:3",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 2967,
-        "src": "29986:10882:3",
+        "scope": 3003,
+        "src": "29986:11141:3",
         "usedErrors": []
       }
     ],
-    "src": "42:40828:3"
+    "src": "42:41087:3"
   },
   "compiler": {
     "name": "solc",
@@ -53231,7 +54089,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.2",
-  "updatedAt": "2021-10-17T14:25:05.481Z",
+  "updatedAt": "2021-10-20T18:45:33.699Z",
   "devdoc": {
     "details": "Implementation of the {IERC165} interface. Contracts that want to implement ERC165 should inherit from this contract and override {supportsInterface} to check for the additional interface id that will be supported. For example: ```solidity function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {     return interfaceId == type(MyInterface).interfaceId || super.supportsInterface(interfaceId); } ``` Alternatively, {ERC165Storage} provides an easier to use but more expensive implementation.",
     "kind": "dev",
